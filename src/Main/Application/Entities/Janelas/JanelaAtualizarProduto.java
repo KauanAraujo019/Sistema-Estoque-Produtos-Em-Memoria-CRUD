@@ -65,13 +65,15 @@ public class JanelaAtualizarProduto extends JFrame {
         JComboBox comboPesq = new JComboBox();
         comboPesq.setBounds(250, 20, 60, 40);
         comboPesq.addItem("nome");
-        comboPesq.addItem("ID");
+        comboPesq.addItem("     ID");
 
 
-
+        JComboBox<String> listaProd = new JComboBox<>();
         botaoPesquisa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                listaProd.removeAllItems();
+
                 if (textoProduto.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Valor inválido!");
                     return;
@@ -79,7 +81,10 @@ public class JanelaAtualizarProduto extends JFrame {
                 String namePesquisaP = (String) comboPesq.getSelectedItem();
 
 
-                if (namePesquisaP == "ID"){
+                listaProd.setBounds(320, 60, 250,40);
+
+
+                if (namePesquisaP == "     ID"){
 
                     try {
                         String pesquisaP = textoProduto.getText();
@@ -89,6 +94,11 @@ public class JanelaAtualizarProduto extends JFrame {
                         for (int i = 0; i < janelaCadastroProdutos.getListaProdutos().size(); i++) {
 
                             if (janelaCadastroProdutos.getListaProdutos().get(i).getIdProduto() == idP) {
+                                listaProd.addItem(janelaCadastroProdutos.getListaProdutos().get(i).getNameProduct());
+                                add(listaProd);
+                                revalidate();
+                                repaint();
+                                listaProd.showPopup();
 
                                 return;
 
@@ -124,14 +134,17 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
                         if (cont == prodPesq.length) {
-                        //prod
-                        }
-                        else {
+                            listaProd.addItem(produto.getNameProduct());
 
                         }
 
 
                     }
+
+                    add(listaProd);
+                    revalidate();
+                    repaint();
+                    listaProd.showPopup();
 
 
                 }catch (ArrayIndexOutOfBoundsException ofBounds){

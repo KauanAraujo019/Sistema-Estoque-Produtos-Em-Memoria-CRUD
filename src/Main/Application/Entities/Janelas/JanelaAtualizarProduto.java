@@ -68,12 +68,10 @@ public class JanelaAtualizarProduto extends JFrame {
         comboPesq.addItem("ID");
 
 
-        JComboBox comboPid = new JComboBox();
+
         botaoPesquisa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-
                 if (textoProduto.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Valor inválido!");
                     return;
@@ -83,20 +81,15 @@ public class JanelaAtualizarProduto extends JFrame {
 
                 if (namePesquisaP == "ID"){
 
-
-
                     try {
                         String pesquisaP = textoProduto.getText();
                         int idP = Integer.parseInt(pesquisaP);
-                        List<JButton> listaItens = new ArrayList<>();
+
 
                         for (int i = 0; i < janelaCadastroProdutos.getListaProdutos().size(); i++) {
 
                             if (janelaCadastroProdutos.getListaProdutos().get(i).getIdProduto() == idP) {
-                                JButton botaoIdP = new JButton(janelaCadastroProdutos.getListaProdutos().get(i).getNameProduct());
-                                botaoIdP.setVisible(false);
-                                botaoIdP.setBounds(320, 50, 200,40);
-                                listaItens.add(botaoIdP);
+
                                 return;
 
                             }
@@ -112,12 +105,12 @@ public class JanelaAtualizarProduto extends JFrame {
                     }
                 }
 
-                List<Produto> listaProdutos = new ArrayList<>();
 
                 String pesquisaP = textoProduto.getText();
                 char[] prodPesq = pesquisaP.toCharArray();
 
                 try {
+
                     for (Produto produto : janelaCadastroProdutos.getListaProdutos()) {
                         char[] arrayProd = produto.getNameProduct().toCharArray();
                         int cont = 0;
@@ -131,8 +124,7 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
                         if (cont == prodPesq.length) {
-                            listaProdutos.add(produto);
-
+                        //prod
                         }
                         else {
 
@@ -142,28 +134,10 @@ public class JanelaAtualizarProduto extends JFrame {
                     }
 
 
-
-
-
                 }catch (ArrayIndexOutOfBoundsException ofBounds){
                     System.out.println("NÃO");
 
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

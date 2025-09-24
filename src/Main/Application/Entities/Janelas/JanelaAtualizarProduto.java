@@ -76,7 +76,6 @@ public class JanelaAtualizarProduto extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JComboBox comboPid = new JComboBox();
-                comboPid.setBounds(320, 20, 200,40);
 
                 if (textoProduto.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Valor inválido!");
@@ -94,7 +93,9 @@ public class JanelaAtualizarProduto extends JFrame {
                         for (int i = 0; i < janelaCadastroProdutos.getListaProdutos().size(); i++) {
 
                             if (janelaCadastroProdutos.getListaProdutos().get(i).getIdProduto() == idP) {
+
                                 comboPid.addItem(janelaCadastroProdutos.getListaProdutos().get(i).abaProdutos());
+
                                 return;
 
                             }
@@ -147,7 +148,8 @@ public class JanelaAtualizarProduto extends JFrame {
                 }
 
                 for (int i = 0; i < listaProdutos.size(); i++){
-                    comboPid.setBounds(320, 25, 200,40);
+                    comboPid.setBounds(250, 25, 270,40);
+                    comboPid.setFont(new Font("arial", Font.PLAIN, 25));
                     comboPid.addItem(listaProdutos.get(i).abaProdutos());
                 }
 

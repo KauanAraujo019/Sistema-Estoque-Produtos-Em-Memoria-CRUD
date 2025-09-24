@@ -68,11 +68,12 @@ public class JanelaAtualizarProduto extends JFrame {
         comboPesq.addItem("     ID");
 
 
-        JComboBox<String> listaProd = new JComboBox<>();
+        JComboBox comboPid = new JComboBox();
         botaoPesquisa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                listaProd.removeAllItems();
+
+                comboPid.removeAllItems();
 
                 if (textoProduto.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Valor inválido!");
@@ -81,25 +82,18 @@ public class JanelaAtualizarProduto extends JFrame {
                 String namePesquisaP = (String) comboPesq.getSelectedItem();
 
 
-                listaProd.setBounds(320, 60, 250,40);
+                if (namePesquisaP == "ID"){
 
-
-                if (namePesquisaP == "     ID"){
+                    comboPid.setBounds(320, 20, 200,40);
 
                     try {
                         String pesquisaP = textoProduto.getText();
                         int idP = Integer.parseInt(pesquisaP);
 
-
                         for (int i = 0; i < janelaCadastroProdutos.getListaProdutos().size(); i++) {
 
                             if (janelaCadastroProdutos.getListaProdutos().get(i).getIdProduto() == idP) {
-                                listaProd.addItem(janelaCadastroProdutos.getListaProdutos().get(i).getNameProduct());
-                                add(listaProd);
-                                revalidate();
-                                repaint();
-                                listaProd.showPopup();
-
+                                comboPid.addItem(janelaCadastroProdutos.getListaProdutos().get(i).abaProdutos());
                                 return;
 
                             }
@@ -115,12 +109,12 @@ public class JanelaAtualizarProduto extends JFrame {
                     }
                 }
 
+                List<Produto> listaProdutos = new ArrayList<>();
 
                 String pesquisaP = textoProduto.getText();
                 char[] prodPesq = pesquisaP.toCharArray();
 
                 try {
-
                     for (Produto produto : janelaCadastroProdutos.getListaProdutos()) {
                         char[] arrayProd = produto.getNameProduct().toCharArray();
                         int cont = 0;
@@ -134,17 +128,18 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
                         if (cont == prodPesq.length) {
-                            listaProd.addItem(produto.getNameProduct());
+                            listaProdutos.add(produto);
+
+                        }
+                        else {
 
                         }
 
 
                     }
 
-                    add(listaProd);
-                    revalidate();
-                    repaint();
-                    listaProd.showPopup();
+
+
 
 
                 }catch (ArrayIndexOutOfBoundsException ofBounds){
@@ -152,6 +147,62 @@ public class JanelaAtualizarProduto extends JFrame {
 
                 }
 
+                for (int i = 0; i < listaProdutos.size(); i++){
+                    comboPid.setBounds(320, 25, 200,40);
+                    comboPid.addItem(listaProdutos.get(i).abaProdutos());
+                }
+
+
+                comboPid.setUI(new BasicComboBoxUI() {
+                    @Override
+                    protected JButton createArrowButton() {
+                        JButton botao = new JButton();
+                        botao.setPreferredSize(new Dimension(0, 0)); // Oculta visualmente
+                        botao.setEnabled(false);                     // Desativa funcionalmente
+                        botao.setFocusable(false);
+                        botao.setVisible(false);
+                        return botao;
+
+                    }
+                });
+
+
+                comboPid.setEditable(true);
+                Component editor = comboPid.getEditor().getEditorComponent();
+                if (editor instanceof JTextField) {
+                    JTextField campo = (JTextField) editor;
+                    campo.setBorder(null);
+                    campo.setBackground(null);
+                    campo.setText("");
+                    campo.setCaretColor(Color.WHITE);
+                }
+
+
+                // Mostra o popup automaticamente
+
+
+
+                comboPid.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        comboPid.setVisible(false);
+
+                        System.out.println(comboPid.getSelectedItem());
+
+                        String produto = (String) comboPid.getSelectedItem();
+
+                        JLabel Jprod = new JLabel(produto);
+                        Jprod.setBounds(20,300,200,40);
+
+
+
+
+
+
+                        add(Jprod);
+
+                    }
+                });
 
 
             }

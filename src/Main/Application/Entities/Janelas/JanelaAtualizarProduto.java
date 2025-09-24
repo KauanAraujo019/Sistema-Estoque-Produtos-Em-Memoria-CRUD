@@ -158,8 +158,8 @@ public class JanelaAtualizarProduto extends JFrame {
                     @Override
                     protected JButton createArrowButton() {
                         JButton botao = new JButton();
-                        botao.setPreferredSize(new Dimension(0, 0)); // Oculta visualmente
-                        botao.setEnabled(false);                     // Desativa funcionalmente
+                        botao.setPreferredSize(new Dimension(0, 0)); //Oculta
+                        botao.setEnabled(false);                     //Desativa
                         botao.setFocusable(false);
                         botao.setVisible(false);
                         return botao;
@@ -179,7 +179,7 @@ public class JanelaAtualizarProduto extends JFrame {
                 }
 
 
-                // Mostra o popup automaticamente
+                // Mostra o popup
                 SwingUtilities.invokeLater(comboPid::showPopup);
 
 

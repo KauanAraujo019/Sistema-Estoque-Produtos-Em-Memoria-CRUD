@@ -26,6 +26,7 @@ public class JanelaAtualizarProduto extends JFrame {
         this.janelaCadastroProdutos = janelaCadastroProdutos;
 
 
+
         setTitle("SISTEMA CADASTRO DE PRODUTOS");
         setBounds(0, 0, 1080, 720);
         setLayout(null);
@@ -53,6 +54,8 @@ public class JanelaAtualizarProduto extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 janelaPrincipal.setVisible(true);
                 setVisible(false);
+
+
             }
         });
 
@@ -65,15 +68,15 @@ public class JanelaAtualizarProduto extends JFrame {
         JComboBox comboPesq = new JComboBox();
         comboPesq.setBounds(250, 20, 60, 40);
         comboPesq.addItem("nome");
-        comboPesq.addItem("     ID");
+        comboPesq.addItem("ID");
 
 
-        JComboBox comboPid = new JComboBox();
+
         botaoPesquisa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                comboPid.removeAllItems();
+                JComboBox comboPid = new JComboBox();
+                comboPid.setBounds(320, 20, 200,40);
 
                 if (textoProduto.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Valor inválido!");
@@ -82,9 +85,7 @@ public class JanelaAtualizarProduto extends JFrame {
                 String namePesquisaP = (String) comboPesq.getSelectedItem();
 
 
-                if (namePesquisaP == "ID"){
-
-                    comboPid.setBounds(320, 20, 200,40);
+                if (namePesquisaP.equals("ID")){
 
                     try {
                         String pesquisaP = textoProduto.getText();
@@ -140,8 +141,6 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
 
-
-
                 }catch (ArrayIndexOutOfBoundsException ofBounds){
                     System.out.println("NÃO");
 
@@ -179,7 +178,7 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
                 // Mostra o popup automaticamente
-
+                SwingUtilities.invokeLater(comboPid::showPopup);
 
 
                 comboPid.addActionListener(new ActionListener() {
@@ -203,6 +202,8 @@ public class JanelaAtualizarProduto extends JFrame {
 
                     }
                 });
+
+                add(comboPid);
 
 
             }

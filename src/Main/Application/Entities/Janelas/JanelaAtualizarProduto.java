@@ -243,7 +243,7 @@ public class JanelaAtualizarProduto extends JFrame {
                 comboPid.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        System.out.println("oi");
+                        
                     }
                 });
 

@@ -79,9 +79,11 @@ public class JanelaAtualizarProduto extends JFrame {
         botaoPesquisa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 comboPid.removeAllItems();
                 comboPid.setBounds(250, 25, 270,40);
                 comboPid.setFont(new Font("arial", Font.PLAIN, 25));
+
 
                 if (textoProduto.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Valor inválido!");
@@ -93,6 +95,7 @@ public class JanelaAtualizarProduto extends JFrame {
                 if (namePesquisaP.equals("ID")){
 
                     try {
+
                         String pesquisaP = textoProduto.getText();
                         int idP = Integer.parseInt(pesquisaP);
 
@@ -101,18 +104,49 @@ public class JanelaAtualizarProduto extends JFrame {
                             return;
                         }
 
-                        for (Produto p : janelaCadastroProdutos.getListaProdutos()){
+                        comboPid.addItem(janelaCadastroProdutos.getListaProdutos().get(idP-1).abaProdutos());
 
-                            if (p.getIdProduto() == idP){
-                                comboPid.addItem(p.abaProdutos());
-                                break;
+                        comboPid.setUI(new BasicComboBoxUI() {
+                            @Override
+                            protected JButton createArrowButton() {
+                                JButton botao = new JButton();
+                                botao.setPreferredSize(new Dimension(0, 0)); //Oculta
+                                botao.setEnabled(false);                     //Desativa
+                                botao.setFocusable(false);
+                                botao.setVisible(false);
+                                return botao;
+
                             }
+                        });
 
+
+                        comboPid.setEditable(true);
+                        Component editor = comboPid.getEditor().getEditorComponent();
+                        if (editor instanceof JTextField) {
+                            JTextField campo = (JTextField) editor;
+                            campo.setBorder(null);
+                            campo.setBackground(null);
+                            campo.setText("");
+                            campo.setCaretColor(Color.WHITE);
                         }
+
+                        SwingUtilities.invokeLater(comboPid::showPopup);
+                        comboPid.setVisible(true);
+                        add(comboPid);
+
+
+                        revalidate();
+                        repaint();
+
+
+                        return;
+
+
+
 
 
                         // Mostra o popup
-                        comboPid.setVisible(true);
+
 
 
                     }catch (NumberFormatException numb){
@@ -146,7 +180,7 @@ public class JanelaAtualizarProduto extends JFrame {
 
                             }
                             else{
-                                return;
+
                             }
 
                         }
@@ -159,6 +193,11 @@ public class JanelaAtualizarProduto extends JFrame {
 
                     }
 
+                    if (listaProdutos.isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Produtuuu");
+                        return;
+                    }
+
 
 
                 }catch (ArrayIndexOutOfBoundsException ofBounds){
@@ -166,16 +205,10 @@ public class JanelaAtualizarProduto extends JFrame {
 
                 }
 
-                if (listaProdutos.isEmpty()){
-                    JOptionPane.showMessageDialog(null, "Produtuuu");
-                    return;
-                }
-
 
                 for (int i = 0; i < listaProdutos.size(); i++){
                     comboPid.addItem(listaProdutos.get(i).abaProdutos());
                 }
-
 
                 comboPid.setUI(new BasicComboBoxUI() {
                     @Override
@@ -202,20 +235,18 @@ public class JanelaAtualizarProduto extends JFrame {
                 }
 
 
+
                 // Mostra o popup
                 SwingUtilities.invokeLater(comboPid::showPopup);
                 comboPid.setVisible(true);
 
-
                 comboPid.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        comboPid.setVisible(false);
-                        System.out.println("Oi");
-
-
+                        System.out.println("oi");
                     }
                 });
+
 
                 add(comboPid);
 

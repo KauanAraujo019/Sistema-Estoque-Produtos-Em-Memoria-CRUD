@@ -81,11 +81,11 @@ public class JanelaAtualizarProduto extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 comboPid.removeAllItems();
-                comboPid.setBounds(250, 25, 270,40);
+                comboPid.setBounds(250, 25, 320,40);
                 comboPid.setFont(new Font("arial", Font.PLAIN, 25));
 
 
-                if (textoProduto.getText().isEmpty()){
+                if (textoProduto.getText().trim().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Valor inválido!");
                     return;
                 }
@@ -104,7 +104,7 @@ public class JanelaAtualizarProduto extends JFrame {
                             return;
                         }
 
-                        comboPid.addItem(janelaCadastroProdutos.getListaProdutos().get(idP-1).abaProdutos());
+                        comboPid.addItem(janelaCadastroProdutos.getListaProdutos().get(idP-1).getNameProduct());
 
                         comboPid.setUI(new BasicComboBoxUI() {
                             @Override
@@ -205,9 +205,15 @@ public class JanelaAtualizarProduto extends JFrame {
 
                 }
 
-
+                String prodAba = null;
                 for (int i = 0; i < listaProdutos.size(); i++){
-                    comboPid.addItem(listaProdutos.get(i).abaProdutos());
+
+                    String[] produto = listaProdutos.get(i).abaProdutos().split(" ");
+                    String nameProduto = produto[0];
+                    prodAba = listaProdutos.get(i).abaProdutos();
+
+
+                    comboPid.addItem(nameProduto);
                 }
 
                 comboPid.setUI(new BasicComboBoxUI() {
@@ -240,10 +246,41 @@ public class JanelaAtualizarProduto extends JFrame {
                 SwingUtilities.invokeLater(comboPid::showPopup);
                 comboPid.setVisible(true);
 
+                String finalProdAba = prodAba;
                 comboPid.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        
+
+                        textoProduto.setText("");
+
+
+                        JLabel labelProd = null;
+
+                        try {
+
+                            comboPid.setVisible(false);
+
+
+
+                            labelProd = new JLabel(finalProdAba);
+                            labelProd.setBounds(10, 80, 350, 40);
+                            labelProd.setFont(new Font("arial", Font.BOLD, 20));
+                            labelProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+
+
+
+                            add(labelProd);
+
+                            revalidate();
+                            repaint();
+
+                        }
+                        catch (NullPointerException n){
+                            revalidate();
+                            repaint();
+                        }
+
+
                     }
                 });
 

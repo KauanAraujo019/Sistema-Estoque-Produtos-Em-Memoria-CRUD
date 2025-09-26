@@ -33,6 +33,9 @@ public class JanelaAtualizarProduto extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
+        revalidate();
+        repaint();
+
 
         JLabel labelProduto = new JLabel("PESQUISAR PRODUTO:");
         labelProduto.setBounds(20, 20, 250, 40);
@@ -49,17 +52,18 @@ public class JanelaAtualizarProduto extends JFrame {
         botaoVoltar.setBounds(20, 380, 130, 40);
         botaoVoltar.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
+
+        JComboBox comboPid = new JComboBox();
         botaoVoltar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 janelaPrincipal.setVisible(true);
+                comboPid.setVisible(false);
                 setVisible(false);
 
 
             }
         });
-
-
 
         ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/lupaPesquisaProduto.png")));
         JButton botaoPesquisa = new JButton(icon);
@@ -75,14 +79,16 @@ public class JanelaAtualizarProduto extends JFrame {
         botaoPesquisa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JComboBox comboPid = new JComboBox();
+                comboPid.removeAllItems();
+                comboPid.setBounds(250, 25, 270,40);
+                comboPid.setFont(new Font("arial", Font.PLAIN, 25));
 
                 if (textoProduto.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Valor inválido!");
                     return;
                 }
-                String namePesquisaP = (String) comboPesq.getSelectedItem();
 
+                String namePesquisaP = (String) comboPesq.getSelectedItem();
 
                 if (namePesquisaP.equals("ID")){
 
@@ -90,20 +96,24 @@ public class JanelaAtualizarProduto extends JFrame {
                         String pesquisaP = textoProduto.getText();
                         int idP = Integer.parseInt(pesquisaP);
 
-                        for (int i = 0; i < janelaCadastroProdutos.getListaProdutos().size(); i++) {
+                        if (idP <= 0 || idP > janelaCadastroProdutos.getListaProdutos().size()){
+                            JOptionPane.showMessageDialog(null, "Produto não encontrado");
+                            return;
+                        }
 
-                            if (janelaCadastroProdutos.getListaProdutos().get(i).getIdProduto() == idP) {
+                        for (Produto p : janelaCadastroProdutos.getListaProdutos()){
 
-                                comboPid.addItem(janelaCadastroProdutos.getListaProdutos().get(i).abaProdutos());
-
-                                return;
-
+                            if (p.getIdProduto() == idP){
+                                comboPid.addItem(p.abaProdutos());
+                                break;
                             }
 
                         }
 
-                        JOptionPane.showMessageDialog(null, "Produto não encontrado");
-                        return;
+
+                        // Mostra o popup
+                        comboPid.setVisible(true);
+
 
                     }catch (NumberFormatException numb){
                         JOptionPane.showMessageDialog(null, "ID invalido!");
@@ -116,16 +126,29 @@ public class JanelaAtualizarProduto extends JFrame {
                 String pesquisaP = textoProduto.getText();
                 char[] prodPesq = pesquisaP.toCharArray();
 
+                Produto prodAdd = null;
                 try {
+
                     for (Produto produto : janelaCadastroProdutos.getListaProdutos()) {
                         char[] arrayProd = produto.getNameProduct().toCharArray();
                         int cont = 0;
 
                         for (int i = 0; i < prodPesq.length; i++) {
+
+                            if (cont > 0 && arrayProd.length < prodPesq.length){
+
+                                break;
+
+                            }
+
                             if (prodPesq[i] == arrayProd[i]) {
                                 cont++;
 
                             }
+                            else{
+                                return;
+                            }
+
                         }
 
 
@@ -133,23 +156,23 @@ public class JanelaAtualizarProduto extends JFrame {
                             listaProdutos.add(produto);
 
                         }
-                        else {
-
-                        }
-
 
                     }
 
 
 
                 }catch (ArrayIndexOutOfBoundsException ofBounds){
-                    System.out.println("NÃO");
+                    listaProdutos.add(prodAdd);
 
                 }
 
+                if (listaProdutos.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Produtuuu");
+                    return;
+                }
+
+
                 for (int i = 0; i < listaProdutos.size(); i++){
-                    comboPid.setBounds(250, 25, 270,40);
-                    comboPid.setFont(new Font("arial", Font.PLAIN, 25));
                     comboPid.addItem(listaProdutos.get(i).abaProdutos());
                 }
 
@@ -181,26 +204,15 @@ public class JanelaAtualizarProduto extends JFrame {
 
                 // Mostra o popup
                 SwingUtilities.invokeLater(comboPid::showPopup);
+                comboPid.setVisible(true);
 
 
                 comboPid.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         comboPid.setVisible(false);
+                        System.out.println("Oi");
 
-                        System.out.println(comboPid.getSelectedItem());
-
-                        String produto = (String) comboPid.getSelectedItem();
-
-                        JLabel Jprod = new JLabel(produto);
-                        Jprod.setBounds(20,300,200,40);
-
-
-
-
-
-
-                        add(Jprod);
 
                     }
                 });

@@ -27,7 +27,7 @@ public class Produto {
 
     public String abaProdutos(){
 
-        return getNameProduct()+" - R$"+String.format("%.2f", getPriceProduct())+" - UN:"+getQuantityProduct();
+        return getNameProduct()+" - R$"+String.format("%.2f", getPriceProduct())+" - UN:"+getQuantityProduct()+"-"+getSimbolPreco();
 
     }
 

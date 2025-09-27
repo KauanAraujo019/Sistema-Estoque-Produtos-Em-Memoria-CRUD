@@ -259,25 +259,50 @@ public class JanelaAtualizarProduto extends JFrame {
 
                             String[] produtoFinal = finalProdAba.split("-");
                             String nameP = produtoFinal[0];
-                            String precoP = produtoFinal[1];
+                            String precoP = produtoFinal[1].substring(3);
                             String quantP = produtoFinal[2];
+                            String simbP = produtoFinal[3];
 
 
 
-                            JLabel labelNameProd = new JLabel(nameP);
-                            labelNameProd.setBounds(10, 80, 290, 40);
+                            JLabel labelNameProd = new JLabel("Produto: ");
+                            labelNameProd.setBounds(10, 80, 100, 40);
                             labelNameProd.setFont(new Font("arial", Font.BOLD, 20));
-                            labelNameProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-                            JLabel labelPrecoProd = new JLabel(precoP);
-                            labelPrecoProd.setBounds(300, 80, 120, 40);
+                            JTextField textNameProd = new JTextField(nameP);
+                            textNameProd.setBounds(130, 80, 290, 40);
+                            textNameProd.setFont(new Font("arial", Font.BOLD, 20));
+
+
+
+                            JLabel labelPrecoProd = new JLabel("Preço:     R$");
+                            labelPrecoProd.setBounds(10, 120, 120, 40);
                             labelPrecoProd.setFont(new Font("arial", Font.BOLD, 20));
-                            labelPrecoProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-                            JLabel labelQuantProd = new JLabel(quantP);
-                            labelQuantProd.setBounds(420, 80, 150, 40);
+                            JTextField textPrecoProd = new JTextField(precoP);
+                            textPrecoProd.setBounds(130, 120, 150, 40);
+                            textPrecoProd.setFont(new Font("arial", Font.BOLD, 20));
+
+
+
+                            JLabel labelQuantProd = new JLabel("Quantidade: ");
+                            labelQuantProd.setBounds(10, 160, 150, 40);
                             labelQuantProd.setFont(new Font("arial", Font.BOLD, 20));
-                            labelQuantProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+
+                            JTextField textQuantProd = new JTextField(quantP);
+                            textQuantProd.setBounds(130, 160, 150, 40);
+                            textQuantProd.setFont(new Font("arial", Font.BOLD, 20));
+
+                            JLabel labelSimbpProd = new JLabel("Cód-UOM:");
+                            labelSimbpProd.setBounds(10, 200, 120, 40);
+                            labelSimbpProd.setFont(new Font("arial", Font.BOLD, 20));
+
+                            JTextField textSimbpProd = new JTextField(simbP);
+                            textSimbpProd.setBounds(130, 200, 100, 40);
+                            textSimbpProd.setFont(new Font("arial", Font.BOLD, 20));
+
+
+
 
 
                             ImageIcon iconAtualizar = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/iconeEditarProduto.png")));
@@ -290,6 +315,8 @@ public class JanelaAtualizarProduto extends JFrame {
                                 public void actionPerformed(ActionEvent e) {
                                     JTextField novoTextProd = new JTextField();
                                     novoTextProd.setBounds(10, 80, 290,40);
+                                    novoTextProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+                                    novoTextProd.setFont(new Font("arial", Font.PLAIN, 20));
 
 
                                     add(novoTextProd);
@@ -302,8 +329,13 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
                             add(labelNameProd);
+                            add(textNameProd);
                             add(labelPrecoProd);
+                            add(textPrecoProd);
                             add(labelQuantProd);
+                            add(textQuantProd);
+                            add(labelSimbpProd);
+                            add(textSimbpProd);
                             add(botaoAtualizar);
 
                             revalidate();

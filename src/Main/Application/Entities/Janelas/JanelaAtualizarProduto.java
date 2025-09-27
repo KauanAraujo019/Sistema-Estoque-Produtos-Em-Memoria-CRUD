@@ -313,51 +313,68 @@ public class JanelaAtualizarProduto extends JFrame {
 
                             ImageIcon iconAtualizar = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/iconeEditarProduto.png")));
                             JButton botaoAtualizar = new JButton(iconAtualizar);
-                            botaoAtualizar.setBounds(530, 80, 40,40);
+                            botaoAtualizar.setBounds(440, 80, 35,35);
 
 
                             botaoAtualizar.addActionListener(new ActionListener() {
                                 @Override
                                 public void actionPerformed(ActionEvent e) {
 
-                                    JLabel labelNameProd = new JLabel("Produto: ");
-                                    labelNameProd.setBounds(10, 80, 150, 40);
-                                    labelNameProd.setFont(new Font("arial", Font.BOLD, 20));
-
-                                    JTextField textNameProd = new JTextField(nameP);
-                                    textNameProd.setBounds(130, 80, 290, 40);
-                                    textNameProd.setFont(new Font("arial", Font.BOLD, 20));
+                                    textNameProd.setVisible(false);
+                                    textPrecoProd.setVisible(false);
+                                    textSimbpProd.setVisible(false);
+                                    textQuantProd.setVisible(false);
 
 
 
-                                    JLabel labelPrecoProd = new JLabel("Preço:    R$");
-                                    labelPrecoProd.setBounds(10, 120, 150, 40);
-                                    labelPrecoProd.setFont(new Font("arial", Font.BOLD, 20));
-
-                                    JTextField textPrecoProd = new JTextField(precoP);
-                                    textPrecoProd.setBounds(130, 120, 150, 40);
-                                    textPrecoProd.setFont(new Font("arial", Font.BOLD, 20));
+                                    JTextField nameProd = new JTextField(nameP);
+                                    nameProd.setBounds(150, 80, 290, 35);
+                                    nameProd.setFont(new Font("arial", Font.PLAIN, 25));
 
 
 
-                                    JLabel labelQuantProd = new JLabel("Quantidade: ");
-                                    labelQuantProd.setBounds(10, 160, 150, 40);
-                                    labelQuantProd.setFont(new Font("arial", Font.BOLD, 20));
 
-                                    JTextField textQuantProd = new JTextField(quantP);
-                                    textQuantProd.setBounds(130, 160, 150, 40);
-                                    textQuantProd.setFont(new Font("arial", Font.BOLD, 20));
+
+                                    JTextField priceProd = new JTextField(precoP);
+                                    priceProd.setBounds(150, 120, 150, 35);
+                                    priceProd.setFont(new Font("arial", Font.PLAIN, 25));
 
 
 
-                                    JLabel labelSimbpProd = new JLabel("Cód-UOM:");
-                                    labelSimbpProd.setBounds(10, 200, 120, 40);
-                                    labelSimbpProd.setFont(new Font("arial", Font.BOLD, 20));
 
-                                    JTextField textSimbpProd = new JTextField(simbP);
-                                    textSimbpProd.setBounds(130, 200, 100, 40);
-                                    textSimbpProd.setFont(new Font("arial", Font.BOLD, 20));
 
+                                    JTextField QuantProd = new JTextField(quantP);
+                                    QuantProd.setBounds(150, 160, 150, 35);
+                                    QuantProd.setFont(new Font("arial", Font.PLAIN, 25));
+
+                                    JComboBox comboP = new JComboBox();
+                                    comboP.setBounds(150, 200, 60, 35);
+                                    comboP.addItem(" UN");
+                                    comboP.addItem(" CX");
+                                    comboP.addItem(" KG");
+                                    comboP.addItem(" G");
+                                    comboP.addItem(" PCT");
+                                    comboP.addItem(" MT");
+
+                                    comboP.setSelectedItem(simbP);
+
+
+                                    botaoAtualizar.setVisible(false);
+
+                                    ImageIcon iconSave = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/SalvarAlteracaoProduto.png")));
+
+                                    JButton botaoSalvar = new JButton(iconSave);
+                                    botaoSalvar.setBounds(440, 80, 35,35);
+
+
+
+
+
+                                    add(nameProd);
+                                    add(priceProd);
+                                    add(comboP);
+                                    add(QuantProd);
+                                    add(botaoSalvar);
 
 
                                     repaint();

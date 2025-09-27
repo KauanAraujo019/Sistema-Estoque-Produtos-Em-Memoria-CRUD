@@ -313,7 +313,7 @@ public class JanelaAtualizarProduto extends JFrame {
 
                             ImageIcon iconAtualizar = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/iconeEditarProduto.png")));
                             JButton botaoAtualizar = new JButton(iconAtualizar);
-                            botaoAtualizar.setBounds(440, 80, 35,35);
+                            botaoAtualizar.setBounds(450, 80, 40,40);
 
 
                             botaoAtualizar.addActionListener(new ActionListener() {
@@ -364,7 +364,7 @@ public class JanelaAtualizarProduto extends JFrame {
                                     ImageIcon iconSave = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/SalvarAlteracaoProduto.png")));
 
                                     JButton botaoSalvar = new JButton(iconSave);
-                                    botaoSalvar.setBounds(440, 80, 35,35);
+                                    botaoSalvar.setBounds(450, 80, 40,40);
 
 
 

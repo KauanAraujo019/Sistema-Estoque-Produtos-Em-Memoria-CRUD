@@ -260,46 +260,52 @@ public class JanelaAtualizarProduto extends JFrame {
                             String[] produtoFinal = finalProdAba.split("-");
                             String nameP = produtoFinal[0];
                             String precoP = produtoFinal[1].substring(3);
-                            String quantP = produtoFinal[2];
+                            String quantP = produtoFinal[2].substring(4);
                             String simbP = produtoFinal[3];
 
 
 
-                            JLabel labelNameProd = new JLabel("Produto: ");
-                            labelNameProd.setBounds(10, 80, 100, 40);
+                            JLabel labelNameProd = new JLabel("PRODUTO: ");
+                            labelNameProd.setBounds(10, 80, 150, 40);
                             labelNameProd.setFont(new Font("arial", Font.BOLD, 20));
 
-                            JTextField textNameProd = new JTextField(nameP);
-                            textNameProd.setBounds(130, 80, 290, 40);
-                            textNameProd.setFont(new Font("arial", Font.BOLD, 20));
+                            JLabel textNameProd = new JLabel(nameP);
+                            textNameProd.setBounds(150, 80, 290, 35);
+                            textNameProd.setFont(new Font("arial", Font.PLAIN, 25));
+                            textNameProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
 
 
-                            JLabel labelPrecoProd = new JLabel("Preço:     R$");
-                            labelPrecoProd.setBounds(10, 120, 120, 40);
+                            JLabel labelPrecoProd = new JLabel("PREÇO:     R$");
+                            labelPrecoProd.setBounds(10, 120, 150, 40);
                             labelPrecoProd.setFont(new Font("arial", Font.BOLD, 20));
 
-                            JTextField textPrecoProd = new JTextField(precoP);
-                            textPrecoProd.setBounds(130, 120, 150, 40);
-                            textPrecoProd.setFont(new Font("arial", Font.BOLD, 20));
+                            JLabel textPrecoProd = new JLabel(precoP);
+                            textPrecoProd.setBounds(150, 120, 150, 35);
+                            textPrecoProd.setFont(new Font("arial", Font.PLAIN, 25));
+                            textPrecoProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
 
 
-                            JLabel labelQuantProd = new JLabel("Quantidade: ");
+                            JLabel labelQuantProd = new JLabel("QUANTIDADE: ");
                             labelQuantProd.setBounds(10, 160, 150, 40);
                             labelQuantProd.setFont(new Font("arial", Font.BOLD, 20));
 
-                            JTextField textQuantProd = new JTextField(quantP);
-                            textQuantProd.setBounds(130, 160, 150, 40);
-                            textQuantProd.setFont(new Font("arial", Font.BOLD, 20));
+                            JLabel textQuantProd = new JLabel(quantP);
+                            textQuantProd.setBounds(150, 160, 150, 35);
+                            textQuantProd.setFont(new Font("arial", Font.PLAIN, 25));
+                            textQuantProd.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+
+
 
                             JLabel labelSimbpProd = new JLabel("Cód-UOM:");
                             labelSimbpProd.setBounds(10, 200, 120, 40);
                             labelSimbpProd.setFont(new Font("arial", Font.BOLD, 20));
 
-                            JTextField textSimbpProd = new JTextField(simbP);
-                            textSimbpProd.setBounds(130, 200, 100, 40);
-                            textSimbpProd.setFont(new Font("arial", Font.BOLD, 20));
+                            JLabel textSimbpProd = new JLabel(simbP);
+                            textSimbpProd.setBounds(150, 200, 100, 35);
+                            textSimbpProd.setFont(new Font("arial", Font.PLAIN, 25));
+                            textSimbpProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
 
 
@@ -313,13 +319,47 @@ public class JanelaAtualizarProduto extends JFrame {
                             botaoAtualizar.addActionListener(new ActionListener() {
                                 @Override
                                 public void actionPerformed(ActionEvent e) {
-                                    JTextField novoTextProd = new JTextField();
-                                    novoTextProd.setBounds(10, 80, 290,40);
-                                    novoTextProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-                                    novoTextProd.setFont(new Font("arial", Font.PLAIN, 20));
+
+                                    JLabel labelNameProd = new JLabel("Produto: ");
+                                    labelNameProd.setBounds(10, 80, 150, 40);
+                                    labelNameProd.setFont(new Font("arial", Font.BOLD, 20));
+
+                                    JTextField textNameProd = new JTextField(nameP);
+                                    textNameProd.setBounds(130, 80, 290, 40);
+                                    textNameProd.setFont(new Font("arial", Font.BOLD, 20));
 
 
-                                    add(novoTextProd);
+
+                                    JLabel labelPrecoProd = new JLabel("Preço:    R$");
+                                    labelPrecoProd.setBounds(10, 120, 150, 40);
+                                    labelPrecoProd.setFont(new Font("arial", Font.BOLD, 20));
+
+                                    JTextField textPrecoProd = new JTextField(precoP);
+                                    textPrecoProd.setBounds(130, 120, 150, 40);
+                                    textPrecoProd.setFont(new Font("arial", Font.BOLD, 20));
+
+
+
+                                    JLabel labelQuantProd = new JLabel("Quantidade: ");
+                                    labelQuantProd.setBounds(10, 160, 150, 40);
+                                    labelQuantProd.setFont(new Font("arial", Font.BOLD, 20));
+
+                                    JTextField textQuantProd = new JTextField(quantP);
+                                    textQuantProd.setBounds(130, 160, 150, 40);
+                                    textQuantProd.setFont(new Font("arial", Font.BOLD, 20));
+
+
+
+                                    JLabel labelSimbpProd = new JLabel("Cód-UOM:");
+                                    labelSimbpProd.setBounds(10, 200, 120, 40);
+                                    labelSimbpProd.setFont(new Font("arial", Font.BOLD, 20));
+
+                                    JTextField textSimbpProd = new JTextField(simbP);
+                                    textSimbpProd.setBounds(130, 200, 100, 40);
+                                    textSimbpProd.setFont(new Font("arial", Font.BOLD, 20));
+
+
+
                                     repaint();
                                 }
                             });

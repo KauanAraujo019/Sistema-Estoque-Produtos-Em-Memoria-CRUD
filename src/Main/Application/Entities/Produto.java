@@ -22,14 +22,12 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "ID: "+idProduto+" PRODUTO: "+getNameProduct()+"   PREÇO: "+getPriceProduct()+"   QUANTIDADE: "+getQuantityProduct();
+        return "ID: "+idProduto+" PRODUTO: "+getNameProduct()+"   PREÇO: "+String.format("%.2f", getPriceProduct())+"   QUANTIDADE: "+getQuantityProduct();
     }
 
     public String abaProdutos(){
 
-        return getNameProduct()+" R$"+getPriceProduct()+" UN: "+getQuantityProduct();
-
-
+        return getNameProduct()+" - R$"+String.format("%.2f", getPriceProduct())+" - UN:"+getQuantityProduct();
 
     }
 

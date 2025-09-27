@@ -85,7 +85,7 @@ public class JanelaAtualizarProduto extends JFrame {
                 comboPid.setFont(new Font("arial", Font.PLAIN, 25));
 
 
-                if (textoProduto.getText().trim().isEmpty()){
+                if (textoProduto.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Valor inválido!");
                     return;
                 }
@@ -208,8 +208,8 @@ public class JanelaAtualizarProduto extends JFrame {
                 String prodAba = null;
                 for (int i = 0; i < listaProdutos.size(); i++){
 
-                    String[] produto = listaProdutos.get(i).abaProdutos().split(" ");
-                    String nameProduto = produto[0];
+
+                    String nameProduto = listaProdutos.get(i).getNameProduct();
                     prodAba = listaProdutos.get(i).abaProdutos();
 
 
@@ -253,23 +253,58 @@ public class JanelaAtualizarProduto extends JFrame {
 
                         textoProduto.setText("");
 
-
-                        JLabel labelProd = null;
-
                         try {
 
                             comboPid.setVisible(false);
 
-
-
-                            labelProd = new JLabel(finalProdAba);
-                            labelProd.setBounds(10, 80, 350, 40);
-                            labelProd.setFont(new Font("arial", Font.BOLD, 20));
-                            labelProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+                            String[] produtoFinal = finalProdAba.split("-");
+                            String nameP = produtoFinal[0];
+                            String precoP = produtoFinal[1];
+                            String quantP = produtoFinal[2];
 
 
 
-                            add(labelProd);
+                            JLabel labelNameProd = new JLabel(nameP);
+                            labelNameProd.setBounds(10, 80, 290, 40);
+                            labelNameProd.setFont(new Font("arial", Font.BOLD, 20));
+                            labelNameProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+
+                            JLabel labelPrecoProd = new JLabel(precoP);
+                            labelPrecoProd.setBounds(300, 80, 120, 40);
+                            labelPrecoProd.setFont(new Font("arial", Font.BOLD, 20));
+                            labelPrecoProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+
+                            JLabel labelQuantProd = new JLabel(quantP);
+                            labelQuantProd.setBounds(420, 80, 150, 40);
+                            labelQuantProd.setFont(new Font("arial", Font.BOLD, 20));
+                            labelQuantProd.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+
+
+                            ImageIcon iconAtualizar = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/iconeEditarProduto.png")));
+                            JButton botaoAtualizar = new JButton(iconAtualizar);
+                            botaoAtualizar.setBounds(530, 80, 40,40);
+
+
+                            botaoAtualizar.addActionListener(new ActionListener() {
+                                @Override
+                                public void actionPerformed(ActionEvent e) {
+                                    JTextField novoTextProd = new JTextField();
+                                    novoTextProd.setBounds(10, 80, 290,40);
+
+
+                                    add(novoTextProd);
+                                    repaint();
+                                }
+                            });
+
+
+
+
+
+                            add(labelNameProd);
+                            add(labelPrecoProd);
+                            add(labelQuantProd);
+                            add(botaoAtualizar);
 
                             revalidate();
                             repaint();

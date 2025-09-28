@@ -255,33 +255,33 @@ public class JanelaAtualizarProduto extends JFrame {
                                             int quantProduto = Integer.parseInt(quantProd.getText());
                                             String simbProd = String.valueOf(comboP.getSelectedItem());
 
-                                            finalProduto.AtualizarProduto(nomeProd, precoProd, quantProduto, simbProd);
+                                            finalProduto.atualizarProduto(nomeProd, precoProd, quantProduto, simbProd);
 
                                             JOptionPane.showMessageDialog(null, "Produto Atualizado com sucesso!");
-
-                                            textNameProd.setText(nomeProd);
-                                            textPrecoProd.setText(String.format("%.2f", precoProd));
-                                            textQuantProd.setText(String.valueOf(quantProduto));
-                                            textSimbpProd.setText(String.valueOf(comboP.getSelectedItem()));
 
                                             remove(nameProd);
                                             remove(priceProd);
                                             remove(quantProd);
                                             remove(comboP);
 
+                                            remove(labelNameProd);
+                                            remove(labelPrecoProd);
+                                            remove(labelQuantProd);
+                                            remove(labelSimbpProd);
 
-                                            textNameProd.setVisible(true);
-                                            textPrecoProd.setVisible(true);
-                                            textSimbpProd.setVisible(true);
-                                            textQuantProd.setVisible(true);
+                                            remove(textNameProd);
+                                            remove(textPrecoProd);
+                                            remove(textSimbpProd);
+                                            remove(textQuantProd);
 
                                             botaoSalvar.setVisible(false);
                                             textSalv.setVisible(false);
 
-                                            botaoAtualizar.setVisible(true);
-                                            textAt.setVisible(true);
+                                            botaoAtualizar.setVisible(false);
+                                            textAt.setVisible(false);
 
                                             revalidate();
+                                            repaint();
 
                                         }
                                     });
@@ -577,33 +577,39 @@ public class JanelaAtualizarProduto extends JFrame {
                                             int quantProduto = Integer.parseInt(quantProd.getText());
                                             String simbProd = String.valueOf(comboP.getSelectedItem());
 
-                                            finalProduto.AtualizarProduto(nomeProd, precoProd, quantProduto, simbProd);
+
+                                            finalProduto.atualizarProduto(nomeProd, precoProd, quantProduto, simbProd);
+
 
                                             JOptionPane.showMessageDialog(null, "Produto Atualizado com sucesso!");
-
-                                            textNameProd.setText(nomeProd);
-                                            textPrecoProd.setText(String.format("%.2f", precoProd));
-                                            textQuantProd.setText(String.valueOf(quantProduto));
-                                            textSimbpProd.setText(String.valueOf(comboP.getSelectedItem()));
 
                                             remove(nameProd);
                                             remove(priceProd);
                                             remove(quantProd);
                                             remove(comboP);
 
+                                            remove(labelNameProd);
+                                            remove(labelPrecoProd);
+                                            remove(labelQuantProd);
+                                            remove(labelSimbpProd);
 
-                                            textNameProd.setVisible(true);
-                                            textPrecoProd.setVisible(true);
-                                            textSimbpProd.setVisible(true);
-                                            textQuantProd.setVisible(true);
+                                            remove(textNameProd);
+                                            remove(textPrecoProd);
+                                            remove(textSimbpProd);
+                                            remove(textQuantProd);
 
                                             botaoSalvar.setVisible(false);
                                             textSalv.setVisible(false);
 
-                                            botaoAtualizar.setVisible(true);
-                                            textAt.setVisible(true);
+                                            botaoAtualizar.setVisible(false);
+                                            textAt.setVisible(false);
+
+
+
+
 
                                             revalidate();
+                                            repaint();
 
                                         }
                                     });

@@ -39,6 +39,14 @@ public class Produto {
     }
 
 
+    public void AtualizarProduto(String nameProduct, double priceProduct, int quantityProduct, String simbolPreco){
+        this.nameProduct = nameProduct;
+        this.priceProduct = priceProduct;
+        this.quantityProduct = quantityProduct;
+        this.simbolPreco = simbolPreco;
+    }
+
+
 
     public String getSimbolPreco(){
         return simbolPreco;

@@ -251,11 +251,21 @@ public class JanelaAtualizarProduto extends JFrame {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
+                        Produto produto = null;
+                        for (Produto p : janelaCadastroProdutos.getListaProdutos()){
+                            if (Objects.equals(comboPid.getSelectedItem(), p.getNameProduct())){
+                                produto = p;
+                            }
+
+                        }
+
                         textoProduto.setText("");
 
                         try {
 
                             comboPid.setVisible(false);
+
+
 
                             String[] produtoFinal = finalProdAba.split("-");
                             String nameP = produtoFinal[0];
@@ -314,8 +324,12 @@ public class JanelaAtualizarProduto extends JFrame {
                             ImageIcon iconAtualizar = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/iconeEditarProduto.png")));
                             JButton botaoAtualizar = new JButton(iconAtualizar);
                             botaoAtualizar.setBounds(450, 80, 40,40);
+                            JLabel textAt = new JLabel("Editar Produto");
+                            textAt.setFont(new Font("arial", Font.PLAIN, 20));
+                            textAt.setBounds(420, 120, 150, 40);
 
 
+                            Produto finalProduto = produto;
                             botaoAtualizar.addActionListener(new ActionListener() {
                                 @Override
                                 public void actionPerformed(ActionEvent e) {
@@ -343,9 +357,9 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
 
-                                    JTextField QuantProd = new JTextField(quantP);
-                                    QuantProd.setBounds(150, 160, 150, 35);
-                                    QuantProd.setFont(new Font("arial", Font.PLAIN, 25));
+                                    JTextField quantProd = new JTextField(quantP);
+                                    quantProd.setBounds(150, 160, 150, 35);
+                                    quantProd.setFont(new Font("arial", Font.PLAIN, 25));
 
                                     JComboBox comboP = new JComboBox();
                                     comboP.setBounds(150, 200, 60, 35);
@@ -360,11 +374,56 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
                                     botaoAtualizar.setVisible(false);
+                                    textAt.setVisible(false);
 
                                     ImageIcon iconSave = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/SalvarAlteracaoProduto.png")));
 
                                     JButton botaoSalvar = new JButton(iconSave);
                                     botaoSalvar.setBounds(450, 80, 40,40);
+                                    JLabel textSalv = new JLabel("Salvar");
+                                    textSalv.setFont(new Font("arial", Font.PLAIN, 20));
+                                    textSalv.setBounds(445, 120, 150,40);
+
+
+                                    botaoSalvar.addActionListener(new ActionListener() {
+                                        @Override
+                                        public void actionPerformed(ActionEvent e) {
+                                            String nomeProd = nameProd.getText();
+                                            System.out.println(nameProd.getText()+" "+getName()+" "+getTitle());
+                                            double precoProd = Double.parseDouble(priceProd.getText());
+                                            int quantProduto = Integer.parseInt(quantProd.getText());
+                                            String simbProd = String.valueOf(comboP.getSelectedItem());
+
+                                            finalProduto.AtualizarProduto(nomeProd, precoProd, quantProduto, simbProd);
+
+                                            JOptionPane.showMessageDialog(null, "Produto Atualizado com sucesso!");
+
+                                            textNameProd.setText(nomeProd);
+                                            textPrecoProd.setText(String.format("%.2f", precoProd));
+                                            textQuantProd.setText(String.valueOf(quantProduto));
+                                            textSimbpProd.setText(String.valueOf(comboP.getSelectedItem()));
+
+                                            remove(nameProd);
+                                            remove(priceProd);
+                                            remove(quantProd);
+                                            remove(comboP);
+
+
+                                            textNameProd.setVisible(true);
+                                            textPrecoProd.setVisible(true);
+                                            textSimbpProd.setVisible(true);
+                                            textQuantProd.setVisible(true);
+
+                                            botaoSalvar.setVisible(false);
+                                            textSalv.setVisible(false);
+
+                                            botaoAtualizar.setVisible(true);
+                                            textAt.setVisible(true);
+
+                                            revalidate();
+
+                                        }
+                                    });
 
 
 
@@ -373,8 +432,9 @@ public class JanelaAtualizarProduto extends JFrame {
                                     add(nameProd);
                                     add(priceProd);
                                     add(comboP);
-                                    add(QuantProd);
+                                    add(quantProd);
                                     add(botaoSalvar);
+                                    add(textSalv);
 
 
                                     repaint();
@@ -394,6 +454,7 @@ public class JanelaAtualizarProduto extends JFrame {
                             add(labelSimbpProd);
                             add(textSimbpProd);
                             add(botaoAtualizar);
+                            add(textAt);
 
                             revalidate();
                             repaint();

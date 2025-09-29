@@ -47,12 +47,6 @@ public class Produto {
         this.simbolPreco = simbolPreco;
     }
 
-    public void resetProduto(){
-        this.nameProduct = null;
-        this.priceProduct = 0.00;
-        this.quantityProduct = 0;
-        this.simbolPreco = null;
-    }
 
 
 

@@ -388,13 +388,11 @@ public class JanelaAtualizarProduto extends JFrame {
 
                 }
 
-                String prodAba = null;
+
                 for (int i = 0; i < listaProdutos.size(); i++){
 
 
                     String nameProduto = listaProdutos.get(i).getNameProduct();
-                    prodAba = listaProdutos.get(i).abaProdutos();
-
 
                     comboPid.addItem(nameProduto);
                 }
@@ -429,15 +427,16 @@ public class JanelaAtualizarProduto extends JFrame {
                 SwingUtilities.invokeLater(comboPid::showPopup);
                 comboPid.setVisible(true);
 
-                String finalProdAba = prodAba;
                 comboPid.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
                         Produto produto = null;
+                        String prodAba = null;
                         for (Produto p : janelaCadastroProdutos.getListaProdutos()){
                             if (Objects.equals(comboPid.getSelectedItem(), p.getNameProduct())){
                                 produto = p;
+                                prodAba = p.abaProdutos();
                             }
 
                         }
@@ -450,7 +449,7 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
 
-                            String[] produtoFinal = finalProdAba.split("-");
+                            String[] produtoFinal = prodAba.split("-");
                             String nameP = produtoFinal[0];
                             String precoP = produtoFinal[1].substring(3);
                             String quantP = produtoFinal[2].substring(4);

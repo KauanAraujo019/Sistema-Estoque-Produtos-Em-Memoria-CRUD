@@ -136,6 +136,7 @@ public class BotaoPesquisaID implements ServiceActionListeners{
 
 
                     Produto finalProduto = produto;
+
                     botaoAtualizar.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
@@ -269,8 +270,8 @@ public class BotaoPesquisaID implements ServiceActionListeners{
             }
 
 
-    }
 
+    }
 
 
 

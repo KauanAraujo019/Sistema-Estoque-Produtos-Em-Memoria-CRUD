@@ -102,8 +102,11 @@ public class JanelaAtualizarProduto extends JFrame {
                 }
                 else {
 
-
+                    comboPid.setSelectedItem(null);
+                    System.out.println(comboPid.getSelectedItem());
                     comboPid.removeAllItems();
+                    comboPid.setBounds(250, 25, 320,40);
+                    comboPid.setFont(new Font("arial", Font.PLAIN, 25));
 
                     List<Produto> listaProdutos = new ArrayList<>();
                     Produto prodAdd = null;
@@ -189,6 +192,11 @@ public class JanelaAtualizarProduto extends JFrame {
                     comboPid.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
+
+
+                            if (comboPid.getSelectedItem() == null){
+                                return;
+                            }
 
                             Produto produto = null;
                             String prodAba = null;
@@ -316,14 +324,11 @@ public class JanelaAtualizarProduto extends JFrame {
                                             @Override
                                             public void actionPerformed(ActionEvent e) {
                                                 String nomeProd = nameProd.getText();
-                                                System.out.println(nameProd.getText() + " " + getName() + " " + getTitle());
                                                 double precoProd = Double.parseDouble(priceProd.getText());
                                                 int quantProduto = Integer.parseInt(quantProd.getText());
                                                 String simbProd = String.valueOf(comboP.getSelectedItem());
 
-
                                                 finalProduto.atualizarProduto(nomeProd, precoProd, quantProduto, simbProd);
-
 
                                                 JOptionPane.showMessageDialog(null, "Produto Atualizado com sucesso!");
 

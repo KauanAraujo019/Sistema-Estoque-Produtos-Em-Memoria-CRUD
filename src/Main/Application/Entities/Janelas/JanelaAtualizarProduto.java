@@ -102,11 +102,12 @@ public class JanelaAtualizarProduto extends JFrame {
                 }
                 else {
 
-                    comboPid.setSelectedItem(null);
-                    System.out.println(comboPid.getSelectedItem());
-                    comboPid.removeAllItems();
-                    comboPid.setBounds(250, 25, 320,40);
-                    comboPid.setFont(new Font("arial", Font.PLAIN, 25));
+                    JComboBox comboPid02 = new JComboBox();
+
+                    comboPid02.setSelectedItem(null);
+                    comboPid02.removeAllItems();
+                    comboPid02.setBounds(250, 25, 320,40);
+                    comboPid02.setFont(new Font("arial", Font.PLAIN, 25));
 
                     List<Produto> listaProdutos = new ArrayList<>();
                     Produto prodAdd = null;
@@ -156,10 +157,10 @@ public class JanelaAtualizarProduto extends JFrame {
 
                     for (int i = 0; i < listaProdutos.size(); i++) {
 
-                        comboPid.addItem(listaProdutos.get(i).getNameProduct());
+                        comboPid02.addItem(listaProdutos.get(i).getNameProduct());
                     }
 
-                    comboPid.setUI(new BasicComboBoxUI() {
+                    comboPid02.setUI(new BasicComboBoxUI() {
                         @Override
                         protected JButton createArrowButton() {
                             JButton botao = new JButton();
@@ -173,8 +174,8 @@ public class JanelaAtualizarProduto extends JFrame {
                     });
 
 
-                    comboPid.setEditable(true);
-                    Component editor = comboPid.getEditor().getEditorComponent();
+                    comboPid02.setEditable(true);
+                    Component editor = comboPid02.getEditor().getEditorComponent();
                     if (editor instanceof JTextField) {
                         JTextField campo = (JTextField) editor;
                         campo.setBorder(null);
@@ -185,16 +186,16 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
                     // Mostra o popup
-                    SwingUtilities.invokeLater(comboPid::showPopup);
-                    comboPid.setVisible(true);
+                    SwingUtilities.invokeLater(comboPid02::showPopup);
+                    comboPid02.setVisible(true);
 
 
-                    comboPid.addActionListener(new ActionListener() {
+                    comboPid02.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
 
 
-                            if (comboPid.getSelectedItem() == null){
+                            if (comboPid02.getSelectedItem() == null){
                                 return;
                             }
 
@@ -202,7 +203,7 @@ public class JanelaAtualizarProduto extends JFrame {
                             String prodAba = null;
 
                             for (Produto p : janelaCadastroProdutos.getListaProdutos()) {
-                                if (Objects.equals(comboPid.getSelectedItem(), p.getNameProduct())) {
+                                if (Objects.equals(comboPid02.getSelectedItem(), p.getNameProduct())) {
                                     produto = p;
                                     prodAba = p.abaProdutos();
                                 }
@@ -213,7 +214,7 @@ public class JanelaAtualizarProduto extends JFrame {
 
                             try {
 
-                                comboPid.setVisible(false);
+                                comboPid02.setVisible(false);
 
 
                                 String[] produtoFinal = prodAba.split("-");
@@ -397,7 +398,7 @@ public class JanelaAtualizarProduto extends JFrame {
                         }
                     });
 
-                    add(comboPid);
+                    add(comboPid02);
 
                 }
 

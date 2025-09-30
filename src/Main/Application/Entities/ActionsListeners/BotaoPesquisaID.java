@@ -37,8 +37,12 @@ public class BotaoPesquisaID implements ServiceActionListeners{
                 String pesquisaP = textoProduto.getText();
                 int idP = Integer.parseInt(pesquisaP);
 
-                if (idP <= 0 || idP > janelaCadastroProdutos.getListaProdutos().size()){
-                    JOptionPane.showMessageDialog(null, "Produto não encontrado");
+                if (idP <= 0){
+                    JOptionPane.showMessageDialog(null, "ID inválido!");
+                    return;
+                }
+                else if (idP > janelaCadastroProdutos.getListaProdutos().size()){
+                    JOptionPane.showMessageDialog(null, "Produto não encontrado!");
                     return;
                 }
 

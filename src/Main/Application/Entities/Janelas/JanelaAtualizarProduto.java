@@ -144,7 +144,7 @@ public class JanelaAtualizarProduto extends JFrame {
                         }
 
                         if (listaProdutos.isEmpty()) {
-                            JOptionPane.showMessageDialog(null, "Produtuuu");
+                            JOptionPane.showMessageDialog(null, "Produto não encontrado!");
                             return;
                         }
 
@@ -155,9 +155,8 @@ public class JanelaAtualizarProduto extends JFrame {
                     }
 
 
-                    for (int i = 0; i < listaProdutos.size(); i++) {
-
-                        comboPid02.addItem(listaProdutos.get(i).getNameProduct());
+                    for (Produto nameP : listaProdutos){
+                        comboPid02.addItem(nameP.getNameProduct());
                     }
 
                     comboPid02.setUI(new BasicComboBoxUI() {
@@ -190,14 +189,21 @@ public class JanelaAtualizarProduto extends JFrame {
                     comboPid02.setVisible(true);
 
 
+
                     comboPid02.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
+                            JTextField textoProd = textoProduto;
 
+                            textoProd.setText("");
+
+                            botaoPesquisa.setVisible(false);
 
                             if (comboPid02.getSelectedItem() == null){
                                 return;
                             }
+
+
 
                             Produto produto = null;
                             String prodAba = null;
@@ -270,6 +276,7 @@ public class JanelaAtualizarProduto extends JFrame {
                                 JLabel textAt = new JLabel("Editar Produto");
                                 textAt.setFont(new Font("arial", Font.PLAIN, 20));
                                 textAt.setBounds(420, 120, 150, 40);
+
 
 
                                 Produto finalProduto = produto;
@@ -353,6 +360,8 @@ public class JanelaAtualizarProduto extends JFrame {
 
                                                 botaoAtualizar.setVisible(false);
                                                 textAt.setVisible(false);
+
+                                                botaoPesquisa.setVisible(true);
 
 
                                                 revalidate();

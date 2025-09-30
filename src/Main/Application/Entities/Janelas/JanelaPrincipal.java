@@ -89,6 +89,7 @@ public class JanelaPrincipal extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 janelaAtualizarP.setVisible(true);
+                janelaAtualizarP.revalidate();
 
 
             }

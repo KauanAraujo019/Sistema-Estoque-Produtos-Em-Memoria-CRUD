@@ -1,4 +1,4 @@
-package Main.Application.Entities.ActionsListeners;
+package Main.Application.Entities.ActionsListenersJanelaAtualizarProdutos;
 
 import Main.Application.Entities.Janelas.JanelaAtualizarProduto;
 import Main.Application.Entities.Janelas.JanelaCadastroProdutos;
@@ -9,82 +9,151 @@ import javax.swing.plaf.basic.BasicComboBoxUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class BotaoPesquisaID implements ServiceActionListeners{
+public class BotaoPesquisaNome implements ServiceActionListeners{
 
-    String namePesquisaP;
-    JComboBox comboPid;
     JTextField textoProduto;
     JanelaCadastroProdutos janelaCadastroProdutos;
+    JButton botaoPesquisa;
     JanelaAtualizarProduto janelaAtualizarProduto;
 
-
-    public BotaoPesquisaID(String namePesquisaP, JComboBox comboPid, JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos, JanelaAtualizarProduto janelaAtualizarProduto){
-        this.namePesquisaP = namePesquisaP;
-        this.comboPid = comboPid;
+    public BotaoPesquisaNome(JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos, JButton botaoPesquisa, JanelaAtualizarProduto janelaAtualizarProduto){
         this.textoProduto = textoProduto;
         this.janelaCadastroProdutos = janelaCadastroProdutos;
+        this.botaoPesquisa = botaoPesquisa;
         this.janelaAtualizarProduto = janelaAtualizarProduto;
-
     }
 
 
-    public void runProgram(){
 
-            try {
+    @Override
+    public void runProgram() {
 
-                String pesquisaP = textoProduto.getText();
-                int idP = Integer.parseInt(pesquisaP);
+        JComboBox comboPid02 = new JComboBox();
 
-                if (idP <= 0){
-                    JOptionPane.showMessageDialog(null, "ID inválido!");
-                    return;
-                }
-                else if (idP > janelaCadastroProdutos.getListaProdutos().size()){
-                    JOptionPane.showMessageDialog(null, "Produto não encontrado!");
-                    return;
-                }
+        comboPid02.setSelectedItem(null);
+        comboPid02.removeAllItems();
+        comboPid02.setBounds(250, 25, 320,40);
+        comboPid02.setFont(new Font("arial", Font.PLAIN, 25));
 
-                comboPid.addItem(janelaCadastroProdutos.getListaProdutos().get(idP-1).getNameProduct());
-                Produto produto = janelaCadastroProdutos.getListaProdutos().get(idP-1);
+        List<Produto> listaProdutos = new ArrayList<>();
+        Produto prodAdd = null;
 
-                comboPid.setUI(new BasicComboBoxUI() {
-                    @Override
-                    protected JButton createArrowButton() {
-                        JButton botao = new JButton();
-                        botao.setPreferredSize(new Dimension(0, 0)); //Oculta
-                        botao.setEnabled(false);                     //Desativa
-                        botao.setFocusable(false);
-                        botao.setVisible(false);
-                        return botao;
+        try {
+
+            String pesquisaP = textoProduto.getText();
+            char[] prodPesq = pesquisaP.toCharArray();
+
+            for (Produto produto : janelaCadastroProdutos.getListaProdutos()) {
+                char[] arrayProd = produto.getNameProduct().toCharArray();
+                int cont = 0;
+
+                for (int i = 0; i < prodPesq.length; i++) {
+
+                    if (cont > 0 && arrayProd.length < prodPesq.length) {
+
+                        break;
 
                     }
-                });
+
+                    if (prodPesq[i] == arrayProd[i]) {
+                        cont++;
+
+                    }
+
+                }
+
+                if (cont == prodPesq.length) {
+                    listaProdutos.add(produto);
+
+                }
+
+            }
+
+            if (listaProdutos.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Produto não encontrado!");
+                return;
+            }
 
 
-                comboPid.setEditable(true);
-                Component editor = comboPid.getEditor().getEditorComponent();
-                if (editor instanceof JTextField) {
-                    JTextField campo = (JTextField) editor;
-                    campo.setBorder(null);
-                    campo.setBackground(null);
-                    campo.setText("");
-                    campo.setCaretColor(Color.WHITE);
+        } catch (ArrayIndexOutOfBoundsException ofBounds) {
+            listaProdutos.add(prodAdd);
+
+        }
+
+
+        for (Produto nameP : listaProdutos){
+            comboPid02.addItem(nameP.getNameProduct());
+        }
+
+        comboPid02.setUI(new BasicComboBoxUI() {
+            @Override
+            protected JButton createArrowButton() {
+                JButton botao = new JButton();
+                botao.setPreferredSize(new Dimension(0, 0)); //Oculta
+                botao.setEnabled(false);                     //Desativa
+                botao.setFocusable(false);
+                botao.setVisible(false);
+                return botao;
+
+            }
+        });
+
+
+        comboPid02.setEditable(true);
+        Component editor = comboPid02.getEditor().getEditorComponent();
+        if (editor instanceof JTextField) {
+            JTextField campo = (JTextField) editor;
+            campo.setBorder(null);
+            campo.setBackground(null);
+            campo.setText("");
+            campo.setCaretColor(Color.WHITE);
+        }
+
+
+        // Mostra o popup
+        SwingUtilities.invokeLater(comboPid02::showPopup);
+        comboPid02.setVisible(true);
+
+
+
+        comboPid02.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JTextField textoProd = textoProduto;
+
+                textoProd.setText("");
+
+                botaoPesquisa.setVisible(false);
+
+                if (comboPid02.getSelectedItem() == null){
+                    return;
                 }
 
 
 
+                Produto produto = null;
+                String prodAba = null;
 
+                for (Produto p : janelaCadastroProdutos.getListaProdutos()) {
+                    if (Objects.equals(comboPid02.getSelectedItem(), p.getNameProduct())) {
+                        produto = p;
+                        prodAba = p.abaProdutos();
+                    }
 
-                textoProduto.setText("");
+                }
+
+                textoProduto.setName("");
 
                 try {
 
-                    comboPid.setVisible(false);
+                    comboPid02.setVisible(false);
 
 
-                    String[] produtoFinal = produto.abaProdutos().split("-");
+                    String[] produtoFinal = prodAba.split("-");
                     String nameP = produtoFinal[0];
                     String precoP = produtoFinal[1].substring(3);
                     String quantP = produtoFinal[2].substring(4);
@@ -139,8 +208,8 @@ public class BotaoPesquisaID implements ServiceActionListeners{
                     textAt.setBounds(420, 120, 150, 40);
 
 
-                    Produto finalProduto = produto;
 
+                    Produto finalProduto = produto;
                     botaoAtualizar.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
@@ -199,7 +268,7 @@ public class BotaoPesquisaID implements ServiceActionListeners{
 
                                     finalProduto.atualizarProduto(nomeProd, precoProd, quantProduto, simbProd);
 
-                                    JOptionPane.showMessageDialog(null, "Produto Atualizado com sucesso!");
+                                    JOptionPane.showMessageDialog(null, "Produto "+nomeProd+" Atualizado com sucesso!");
 
                                     janelaAtualizarProduto.remove(nameProd);
                                     janelaAtualizarProduto.remove(priceProd);
@@ -222,6 +291,9 @@ public class BotaoPesquisaID implements ServiceActionListeners{
                                     botaoAtualizar.setVisible(false);
                                     textAt.setVisible(false);
 
+                                    botaoPesquisa.setVisible(true);
+
+
                                     janelaAtualizarProduto.revalidate();
                                     janelaAtualizarProduto.repaint();
 
@@ -238,6 +310,7 @@ public class BotaoPesquisaID implements ServiceActionListeners{
 
 
                             janelaAtualizarProduto.repaint();
+
                         }
                     });
 
@@ -256,27 +329,20 @@ public class BotaoPesquisaID implements ServiceActionListeners{
                     janelaAtualizarProduto.revalidate();
                     janelaAtualizarProduto.repaint();
 
-
-                }catch (NullPointerException n){
+                } catch (NullPointerException n) {
                     janelaAtualizarProduto.revalidate();
                     janelaAtualizarProduto.repaint();
                 }
 
 
-
-                janelaAtualizarProduto.revalidate();
-                janelaAtualizarProduto.repaint();
-
-
-            }catch (NumberFormatException numb){
-                JOptionPane.showMessageDialog(null, "ID invalido!");
-
             }
+        });
+
+        janelaAtualizarProduto.add(comboPid02);
 
 
 
     }
-
 
 
 

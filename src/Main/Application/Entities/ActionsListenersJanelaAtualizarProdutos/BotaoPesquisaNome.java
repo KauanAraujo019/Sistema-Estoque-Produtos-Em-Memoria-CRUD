@@ -18,27 +18,21 @@ public class BotaoPesquisaNome implements ServiceActionListeners{
     JTextField textoProduto;
     JanelaCadastroProdutos janelaCadastroProdutos;
     JButton botaoPesquisa;
+    JComboBox comboPid02;
     JanelaAtualizarProduto janelaAtualizarProduto;
 
-    public BotaoPesquisaNome(JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos, JButton botaoPesquisa, JanelaAtualizarProduto janelaAtualizarProduto){
+    public BotaoPesquisaNome(JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos,JComboBox comboPid02, JButton botaoPesquisa, JanelaAtualizarProduto janelaAtualizarProduto){
         this.textoProduto = textoProduto;
         this.janelaCadastroProdutos = janelaCadastroProdutos;
         this.botaoPesquisa = botaoPesquisa;
         this.janelaAtualizarProduto = janelaAtualizarProduto;
+        this.comboPid02 = comboPid02;
     }
 
 
 
     @Override
     public void runProgram() {
-
-        JComboBox comboPid02 = new JComboBox();
-
-        comboPid02.setSelectedItem(null);
-        comboPid02.removeAllItems();
-        comboPid02.setBounds(250, 25, 320,40);
-        comboPid02.setFont(new Font("arial", Font.PLAIN, 25));
-
         List<Produto> listaProdutos = new ArrayList<>();
         Produto prodAdd = null;
 
@@ -123,8 +117,10 @@ public class BotaoPesquisaNome implements ServiceActionListeners{
         comboPid02.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JTextField textoProd = textoProduto;
+                janelaAtualizarProduto.revalidate();
 
+
+                JTextField textoProd = textoProduto;
                 textoProd.setText("");
 
                 botaoPesquisa.setVisible(false);
@@ -132,7 +128,6 @@ public class BotaoPesquisaNome implements ServiceActionListeners{
                 if (comboPid02.getSelectedItem() == null){
                     return;
                 }
-
 
 
                 Produto produto = null;

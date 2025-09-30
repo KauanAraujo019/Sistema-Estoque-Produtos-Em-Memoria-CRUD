@@ -202,6 +202,7 @@ public class BotaoPesquisaID implements ServiceActionListeners{
 
                                     JOptionPane.showMessageDialog(null, "Produto Atualizado com sucesso!");
 
+
                                     janelaAtualizarProduto.remove(nameProd);
                                     janelaAtualizarProduto.remove(priceProd);
                                     janelaAtualizarProduto.remove(quantProd);

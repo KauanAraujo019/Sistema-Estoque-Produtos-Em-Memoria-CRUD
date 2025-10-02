@@ -1,4 +1,4 @@
-package Main.Application.Entities.ActionsListenersJanelaAtualizarProdutos;
+package Main.Application.Entities.BotoesPesquisaProduto;
 
 import Main.Application.Entities.Janelas.JanelaAtualizarProduto;
 import Main.Application.Entities.Janelas.JanelaCadastroProdutos;

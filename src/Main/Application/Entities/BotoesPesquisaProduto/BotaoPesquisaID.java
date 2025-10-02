@@ -1,4 +1,4 @@
-package Main.Application.Entities.ActionsListenersJanelaAtualizarProdutos;
+package Main.Application.Entities.BotoesPesquisaProduto;
 
 import Main.Application.Entities.Janelas.JanelaAtualizarProduto;
 import Main.Application.Entities.Janelas.JanelaCadastroProdutos;
@@ -16,16 +16,17 @@ public class BotaoPesquisaID implements ServiceActionListeners{
     JComboBox comboPid;
     JTextField textoProduto;
     JanelaCadastroProdutos janelaCadastroProdutos;
-
     JanelaAtualizarProduto janelaAtualizarProduto;
+    JButton botaoPesquisa;
 
 
-    public BotaoPesquisaID(JComboBox comboPid, JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos, JanelaAtualizarProduto janelaAtualizarProduto){
+    public BotaoPesquisaID(JComboBox comboPid, JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos, JanelaAtualizarProduto janelaAtualizarProduto, JButton botaoPesquisa){
 
         this.comboPid = comboPid;
         this.textoProduto = textoProduto;
         this.janelaCadastroProdutos = janelaCadastroProdutos;
         this.janelaAtualizarProduto = janelaAtualizarProduto;
+        this.botaoPesquisa = botaoPesquisa;
 
     }
 
@@ -141,6 +142,8 @@ public class BotaoPesquisaID implements ServiceActionListeners{
 
                     Produto finalProduto = produto;
 
+                    botaoPesquisa.setVisible(false);
+
                     botaoAtualizar.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
@@ -222,6 +225,7 @@ public class BotaoPesquisaID implements ServiceActionListeners{
 
                                     botaoAtualizar.setVisible(false);
                                     textAt.setVisible(false);
+                                    botaoPesquisa.setVisible(true);
 
                                     janelaAtualizarProduto.revalidate();
                                     janelaAtualizarProduto.repaint();

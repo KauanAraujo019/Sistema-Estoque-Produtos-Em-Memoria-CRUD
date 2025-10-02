@@ -1,8 +1,9 @@
 package Main.Application.Entities.Janelas;
 
-import Main.Application.Entities.ActionsListenersJanelaAtualizarProdutos.BotaoPesquisaID;
-import Main.Application.Entities.ActionsListenersJanelaAtualizarProdutos.BotaoPesquisaNome;
-import Main.Application.Entities.ActionsListenersJanelaAtualizarProdutos.ServiceActionListeners;
+import Main.Application.Entities.BotoesPesquisaProduto.BotaoPesquisaID;
+import Main.Application.Entities.BotoesPesquisaProduto.BotaoPesquisaNome;
+import Main.Application.Entities.BotoesPesquisaProduto.ServiceActionListeners;
+import org.w3c.dom.ls.LSOutput;
 
 import javax.swing.*;
 import java.awt.*;
@@ -84,14 +85,7 @@ public class JanelaAtualizarProduto extends JFrame {
 
                 if (namePesquisaP.equals("ID")){
 
-                    JComboBox comboPid = new JComboBox();
-                    comboPid.removeAllItems();
-                    comboPid.setBounds(250, 25, 320,40);
-                    comboPid.setFont(new Font("arial", Font.PLAIN, 25));
-
-                    ServiceActionListeners botaoPesquisaID = new BotaoPesquisaID(comboPid, textoProduto, janelaCadastroProdutos, jan);
-
-                    botaoPesquisaID.runProgram();
+                    pesquisaIDProduto(textoProduto, botaoPesquisa);
 
                 }
                 else {
@@ -114,13 +108,13 @@ public class JanelaAtualizarProduto extends JFrame {
 
     }
 
-    public void pesquisaIDProduto(JTextField namePesquisaP, JTextField textoProduto){
+    public void pesquisaIDProduto(JTextField textoProduto, JButton botaoPesquisa){
         JComboBox comboPid = new JComboBox();
         comboPid.removeAllItems();
         comboPid.setBounds(250, 25, 320,40);
         comboPid.setFont(new Font("arial", Font.PLAIN, 25));
 
-        ServiceActionListeners botaoPesquisaID = new BotaoPesquisaID(namePesquisaP, comboPid, textoProduto, janelaCadastroProdutos, jan);
+        ServiceActionListeners botaoPesquisaID = new BotaoPesquisaID(comboPid, textoProduto, janelaCadastroProdutos, jan, botaoPesquisa);
 
         botaoPesquisaID.runProgram();
 
@@ -139,5 +133,8 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
     }
+
+
+
 
 }

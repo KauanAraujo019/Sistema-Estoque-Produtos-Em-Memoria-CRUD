@@ -18,6 +18,7 @@ public class JanelaAtualizarProduto extends JFrame {
 
 
 
+
     public JanelaAtualizarProduto(JanelaPrincipal janelaPrincipal, JanelaCadastroProdutos janelaCadastroProdutos){
         this.janelaPrincipal = janelaPrincipal;
         this.janelaCadastroProdutos = janelaCadastroProdutos;
@@ -88,22 +89,13 @@ public class JanelaAtualizarProduto extends JFrame {
                     comboPid.setBounds(250, 25, 320,40);
                     comboPid.setFont(new Font("arial", Font.PLAIN, 25));
 
-                    ServiceActionListeners botaoPesquisaID = new BotaoPesquisaID(namePesquisaP, comboPid, textoProduto, janelaCadastroProdutos, jan);
+                    ServiceActionListeners botaoPesquisaID = new BotaoPesquisaID(comboPid, textoProduto, janelaCadastroProdutos, jan);
 
                     botaoPesquisaID.runProgram();
 
                 }
                 else {
-
-                    JComboBox comboPid02 = new JComboBox();
-                    comboPid02.setSelectedItem(null);
-                    comboPid02.removeAllItems();
-                    comboPid02.setBounds(250, 25, 320,40);
-                    comboPid02.setFont(new Font("arial", Font.PLAIN, 25));
-
-                    ServiceActionListeners botaoPesquisaNome = new BotaoPesquisaNome(textoProduto, janelaCadastroProdutos, comboPid02, botaoPesquisa, jan);
-
-                    botaoPesquisaNome.runProgram();
+                    pesquisaNomeProduto(textoProduto, botaoPesquisa);
 
                 }
 
@@ -119,6 +111,32 @@ public class JanelaAtualizarProduto extends JFrame {
         add(comboPesq);
 
         setVisible(false);
+
+    }
+
+    public void pesquisaIDProduto(JTextField namePesquisaP, JTextField textoProduto){
+        JComboBox comboPid = new JComboBox();
+        comboPid.removeAllItems();
+        comboPid.setBounds(250, 25, 320,40);
+        comboPid.setFont(new Font("arial", Font.PLAIN, 25));
+
+        ServiceActionListeners botaoPesquisaID = new BotaoPesquisaID(namePesquisaP, comboPid, textoProduto, janelaCadastroProdutos, jan);
+
+        botaoPesquisaID.runProgram();
+
+    }
+
+    public void pesquisaNomeProduto(JTextField textoProduto, JButton botaoPesquisa){
+        JComboBox comboPid02 = new JComboBox();
+        comboPid02.setSelectedItem(null);
+        comboPid02.removeAllItems();
+        comboPid02.setBounds(250, 25, 320,40);
+        comboPid02.setFont(new Font("arial", Font.PLAIN, 25));
+
+        ServiceActionListeners botaoPesquisaNome = new BotaoPesquisaNome(textoProduto, janelaCadastroProdutos, comboPid02, botaoPesquisa, jan);
+
+        botaoPesquisaNome.runProgram();
+
 
     }
 

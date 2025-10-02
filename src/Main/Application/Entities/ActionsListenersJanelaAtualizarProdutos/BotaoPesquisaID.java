@@ -13,7 +13,6 @@ import java.util.Objects;
 
 public class BotaoPesquisaID implements ServiceActionListeners{
 
-    String namePesquisaP;
     JComboBox comboPid;
     JTextField textoProduto;
     JanelaCadastroProdutos janelaCadastroProdutos;
@@ -21,8 +20,8 @@ public class BotaoPesquisaID implements ServiceActionListeners{
     JanelaAtualizarProduto janelaAtualizarProduto;
 
 
-    public BotaoPesquisaID(String namePesquisaP, JComboBox comboPid, JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos, JanelaAtualizarProduto janelaAtualizarProduto){
-        this.namePesquisaP = namePesquisaP;
+    public BotaoPesquisaID(JComboBox comboPid, JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos, JanelaAtualizarProduto janelaAtualizarProduto){
+
         this.comboPid = comboPid;
         this.textoProduto = textoProduto;
         this.janelaCadastroProdutos = janelaCadastroProdutos;

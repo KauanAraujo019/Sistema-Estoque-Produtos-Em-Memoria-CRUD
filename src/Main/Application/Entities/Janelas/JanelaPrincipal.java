@@ -11,6 +11,7 @@ public class JanelaPrincipal extends JFrame {
     protected JanelaCadastroProdutos janelaCadastrarP;
     protected JanelaListarProdutos janelaListarP;
     protected JanelaAtualizarProduto janelaAtualizarP;
+    protected JanelaRemoverProdutos janelaRemoverP;
 
 
 
@@ -20,6 +21,7 @@ public class JanelaPrincipal extends JFrame {
         this.janelaCadastrarP = new JanelaCadastroProdutos(this);
         this.janelaListarP = new JanelaListarProdutos(this, janelaCadastrarP);
         this.janelaAtualizarP = new JanelaAtualizarProduto(this, janelaCadastrarP);
+        this.janelaRemoverP = new JanelaRemoverProdutos(this, janelaCadastrarP);
 
 
 
@@ -40,7 +42,7 @@ public class JanelaPrincipal extends JFrame {
         botaoListarProduto.setBounds(20, 70, 200, 40);
         botaoListarProduto.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-        JButton botaoAtualizarProduto = new JButton("ATUALIZAR PRODUTOS");
+        JButton botaoAtualizarProduto = new JButton("ATUALIZAR/REMOVER PRODUTOS");
         botaoAtualizarProduto.setBounds(20, 120, 200, 40);
         botaoAtualizarProduto.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
@@ -89,6 +91,21 @@ public class JanelaPrincipal extends JFrame {
 
             }
         });
+
+
+
+        botaoRemoverProduto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                janelaRemoverP.setVisible(true);
+
+            }
+        });
+
+
+
+
 
 
     }

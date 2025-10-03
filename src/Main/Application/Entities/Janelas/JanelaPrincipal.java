@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.Objects;
 
 
 public class JanelaPrincipal extends JFrame {
@@ -23,6 +25,9 @@ public class JanelaPrincipal extends JFrame {
         this.janelaAtualizarP = new JanelaAtualizarProduto(this, janelaCadastrarP);
         this.janelaRemoverP = new JanelaRemoverProdutos(this, janelaCadastrarP);
 
+        ImageIcon iconeSistema = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoSistema.jpg")));
+        JLabel logoSistema = new JLabel(iconeSistema);
+        logoSistema.setBounds(517, 0,563, 471);
 
 
         JLabel tituloCriadorSistema = new JLabel("DESENVOLVIDO POR:  KAUAN ARAÚJO                 EMAIL: kauanaquinogo@gmail.com");
@@ -63,6 +68,7 @@ public class JanelaPrincipal extends JFrame {
         add(botaoAtualizarProduto);
         add(botaoRemoverProduto);
         add(tituloCriadorSistema);
+        add(logoSistema);
 
 
 

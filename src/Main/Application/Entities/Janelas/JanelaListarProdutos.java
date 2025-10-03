@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
+
 
 public class JanelaListarProdutos extends JFrame {
 
@@ -60,6 +60,8 @@ public class JanelaListarProdutos extends JFrame {
 
         btnListar.setBounds(20, 330, 130, 40);
         btnListar.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+
+
 
 
         btnListar.addActionListener(new ActionListener() {

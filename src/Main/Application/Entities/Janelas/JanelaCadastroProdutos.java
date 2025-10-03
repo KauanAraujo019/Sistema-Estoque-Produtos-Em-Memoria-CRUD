@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class JanelaCadastroProdutos extends JFrame {
@@ -36,6 +37,10 @@ public class JanelaCadastroProdutos extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        ImageIcon iconeCadastroProduto = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/cadastroProduto.png")));
+        JLabel logoCadastroProduto = new JLabel(iconeCadastroProduto);
+        logoCadastroProduto.setBounds(517, 0,563, 471);
 
 
 
@@ -161,6 +166,7 @@ public class JanelaCadastroProdutos extends JFrame {
         add(labelQuant);
         add(textQuant);
         add(btnCadastrar);
+        add(logoCadastroProduto);
         setVisible(false);
 
 

@@ -65,7 +65,7 @@ public class JanelaAtualizarProduto extends JFrame {
 
         ImageIcon iconeAtualizarP = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoEditarProduto.png")));
         logoAtualizarProduto = new JLabel(iconeAtualizarP);
-        logoAtualizarProduto.setBounds(550, 0,500, 500);
+        logoAtualizarProduto.setBounds(650, 0,400, 400);
 
 
 

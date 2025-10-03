@@ -27,15 +27,16 @@ public class JanelaPrincipal extends JFrame {
 
         ImageIcon iconeSistema01 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoPrincipal02.png")));
         JLabel logoSistema01 = new JLabel(iconeSistema01);
-        logoSistema01.setBounds(500, 0,563, 471);
+        logoSistema01.setBounds(600, -40,400, 400);
 
         ImageIcon iconeSistema02 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoPrincipal01.png")));
         JLabel logoSistema02 = new JLabel(iconeSistema02);
         logoSistema02.setBounds(-100, 120,450, 450);
 
         JLabel nomeSistema = new JLabel("SUPERMARKET JAVA");
-        nomeSistema.setBounds(600, 500, 450, 48);
+        nomeSistema.setBounds(620, 350, 450, 48);
         nomeSistema.setFont(new Font("Calibri", Font.BOLD, 48));
+        nomeSistema.setForeground(Color.blue);
 
 
 

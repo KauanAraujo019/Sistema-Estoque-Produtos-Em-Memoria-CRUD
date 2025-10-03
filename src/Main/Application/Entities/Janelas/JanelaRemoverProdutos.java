@@ -25,10 +25,17 @@ public class JanelaRemoverProdutos extends JanelaAtualizarProduto {
         labelProduto.setBounds(20, 20, 300, 40);
         labelProduto.setFont(new Font("arial", Font.BOLD, 20));
 
+
+        ImageIcon iconeRemoverProduto = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoRemoverProduto.png")));
+        JLabel logoRemoverProduto = new JLabel(iconeRemoverProduto);
+        logoRemoverProduto.setBounds(517, 0,563, 471);
+
+
         setResizable(false);
 
 
         add(labelProduto);
+        add(logoRemoverProduto);
 
     }
 

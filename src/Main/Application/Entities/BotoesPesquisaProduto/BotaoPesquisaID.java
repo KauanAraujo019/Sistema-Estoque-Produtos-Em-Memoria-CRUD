@@ -13,16 +13,16 @@ import java.util.Objects;
 
 public class BotaoPesquisaID implements ServiceActionListeners{
 
-    JComboBox comboPid;
+
     JTextField textoProduto;
     JanelaCadastroProdutos janelaCadastroProdutos;
     JanelaAtualizarProduto janelaAtualizarProduto;
     JButton botaoPesquisa;
 
 
-    public BotaoPesquisaID(JComboBox comboPid, JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos, JanelaAtualizarProduto janelaAtualizarProduto, JButton botaoPesquisa){
+    public BotaoPesquisaID(JTextField textoProduto, JanelaCadastroProdutos janelaCadastroProdutos, JanelaAtualizarProduto janelaAtualizarProduto, JButton botaoPesquisa){
 
-        this.comboPid = comboPid;
+
         this.textoProduto = textoProduto;
         this.janelaCadastroProdutos = janelaCadastroProdutos;
         this.janelaAtualizarProduto = janelaAtualizarProduto;
@@ -47,42 +47,14 @@ public class BotaoPesquisaID implements ServiceActionListeners{
                     return;
                 }
 
-                comboPid.addItem(janelaCadastroProdutos.getListaProdutos().get(idP-1).getNameProduct());
                 Produto produto = janelaCadastroProdutos.getListaProdutos().get(idP-1);
-
-                comboPid.setUI(new BasicComboBoxUI() {
-                    @Override
-                    protected JButton createArrowButton() {
-                        JButton botao = new JButton();
-                        botao.setPreferredSize(new Dimension(0, 0)); //Oculta
-                        botao.setEnabled(false);                     //Desativa
-                        botao.setFocusable(false);
-                        botao.setVisible(false);
-                        return botao;
-
-                    }
-                });
-
-
-                comboPid.setEditable(true);
-                Component editor = comboPid.getEditor().getEditorComponent();
-                if (editor instanceof JTextField) {
-                    JTextField campo = (JTextField) editor;
-                    campo.setBorder(null);
-                    campo.setBackground(null);
-                    campo.setText("");
-                    campo.setCaretColor(Color.WHITE);
-                }
-
-
-
 
 
                 textoProduto.setText("");
 
                 try {
 
-                    comboPid.setVisible(false);
+
 
 
                     String[] produtoFinal = produto.abaProdutos().split("-");

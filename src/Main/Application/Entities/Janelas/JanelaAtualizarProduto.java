@@ -109,12 +109,9 @@ public class JanelaAtualizarProduto extends JFrame {
     }
 
     public void pesquisaIDProduto(JTextField textoProduto, JButton botaoPesquisa){
-        JComboBox comboPid = new JComboBox();
-        comboPid.removeAllItems();
-        comboPid.setBounds(250, 25, 320,40);
-        comboPid.setFont(new Font("arial", Font.PLAIN, 25));
 
-        ServiceActionListeners botaoPesquisaID = new BotaoPesquisaID(comboPid, textoProduto, janelaCadastroProdutos, jan, botaoPesquisa);
+
+        ServiceActionListeners botaoPesquisaID = new BotaoPesquisaID(textoProduto, janelaCadastroProdutos, jan, botaoPesquisa);
 
         botaoPesquisaID.runProgram();
 

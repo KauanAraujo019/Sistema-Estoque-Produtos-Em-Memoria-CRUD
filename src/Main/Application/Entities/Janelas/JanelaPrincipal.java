@@ -42,7 +42,7 @@ public class JanelaPrincipal extends JFrame {
         botaoListarProduto.setBounds(20, 70, 200, 40);
         botaoListarProduto.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-        JButton botaoAtualizarProduto = new JButton("ATUALIZAR/REMOVER PRODUTOS");
+        JButton botaoAtualizarProduto = new JButton("ATUALIZAR PRODUTOS");
         botaoAtualizarProduto.setBounds(20, 120, 200, 40);
         botaoAtualizarProduto.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 

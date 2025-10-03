@@ -13,11 +13,15 @@ public class JanelaRemoverProdutos extends JanelaAtualizarProduto {
 
     public JanelaRemoverProdutos(JanelaPrincipal janelaPrincipal, JanelaCadastroProdutos janelaCadastroProdutos) {
         super(janelaPrincipal, janelaCadastroProdutos);
+        getjComboBox().setSelectedItem("ID");
         remove(getjComboBox());
         remove(getJlabelProduto());
 
-        JLabel labelProduto = new JLabel("PESQUISAR PRODUTO POR ID:");
-        labelProduto.setBounds(20, 20, 280, 40);
+        getTextoProduto().setBounds(280, 20, 100,40);
+        getBotaoPesquisa().setBounds(390, 20, 40,40);
+
+        JLabel labelProduto = new JLabel("PESQUISAR PRODUTO ID:");
+        labelProduto.setBounds(20, 20, 300, 40);
         labelProduto.setFont(new Font("arial", Font.BOLD, 20));
 
 
@@ -107,6 +111,10 @@ public class JanelaRemoverProdutos extends JanelaAtualizarProduto {
                 Produto finalProduto = produto;
 
                 botaoPesquisa.setVisible(false);
+
+
+
+                JButton botaoDesfazer = new JButton();
 
                 botaoExcluir.addActionListener(new ActionListener() {
                     @Override

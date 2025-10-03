@@ -19,6 +19,8 @@ public class JanelaAtualizarProduto extends JFrame {
 
     protected JComboBox comboPesq;
     protected JLabel labelProduto;
+    protected JTextField textoProduto;
+    protected JButton botaoPesquisa;
 
     public JComboBox getjComboBox(){
         return comboPesq;
@@ -26,6 +28,14 @@ public class JanelaAtualizarProduto extends JFrame {
 
     public JLabel getJlabelProduto(){
         return labelProduto;
+    }
+
+    public JTextField getTextoProduto(){
+        return textoProduto;
+    }
+
+    public JButton getBotaoPesquisa(){
+        return botaoPesquisa;
     }
 
 
@@ -53,7 +63,7 @@ public class JanelaAtualizarProduto extends JFrame {
         labelProduto.setBounds(20, 20, 250, 40);
         labelProduto.setFont(new Font("arial", Font.BOLD, 20));
 
-        JTextField textoProduto = new JTextField();
+        textoProduto = new JTextField();
         textoProduto.setBounds(320, 20, 200,40);
         textoProduto.setFont(new Font("arial", Font.PLAIN ,25));
 
@@ -76,7 +86,7 @@ public class JanelaAtualizarProduto extends JFrame {
         });
 
         ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/lupaPesquisaProduto.png")));
-        JButton botaoPesquisa = new JButton(icon);
+        botaoPesquisa = new JButton(icon);
         botaoPesquisa.setBounds(530, 20, 40,40);
 
         comboPesq = new JComboBox();

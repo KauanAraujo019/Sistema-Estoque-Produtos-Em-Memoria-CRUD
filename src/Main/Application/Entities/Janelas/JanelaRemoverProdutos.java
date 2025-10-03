@@ -16,6 +16,7 @@ public class JanelaRemoverProdutos extends JanelaAtualizarProduto {
         getjComboBox().setSelectedItem("ID");
         remove(getjComboBox());
         remove(getJlabelProduto());
+        remove(getLogoAtualizarProduto());
 
         getTextoProduto().setBounds(280, 20, 100,40);
         getBotaoPesquisa().setBounds(390, 20, 40,40);

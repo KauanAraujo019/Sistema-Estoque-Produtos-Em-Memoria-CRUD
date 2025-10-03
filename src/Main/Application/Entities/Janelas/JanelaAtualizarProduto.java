@@ -3,7 +3,6 @@ package Main.Application.Entities.Janelas;
 import Main.Application.Entities.BotoesPesquisaProduto.BotaoPesquisaID;
 import Main.Application.Entities.BotoesPesquisaProduto.BotaoPesquisaNome;
 import Main.Application.Entities.BotoesPesquisaProduto.ServiceActionListeners;
-import org.w3c.dom.ls.LSOutput;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,6 +20,7 @@ public class JanelaAtualizarProduto extends JFrame {
     protected JLabel labelProduto;
     protected JTextField textoProduto;
     protected JButton botaoPesquisa;
+    protected JLabel logoAtualizarProduto;
 
     public JComboBox getjComboBox(){
         return comboPesq;
@@ -38,6 +38,9 @@ public class JanelaAtualizarProduto extends JFrame {
         return botaoPesquisa;
     }
 
+    public JLabel getLogoAtualizarProduto(){
+        return logoAtualizarProduto;
+    }
 
 
 
@@ -56,9 +59,15 @@ public class JanelaAtualizarProduto extends JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
 
-
         revalidate();
         repaint();
+
+
+        ImageIcon iconeAtualizarP = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoEditarProduto.png")));
+        logoAtualizarProduto = new JLabel(iconeAtualizarP);
+        logoAtualizarProduto.setBounds(550, 0,500, 500);
+
+
 
 
         labelProduto = new JLabel("PESQUISAR PRODUTO:");
@@ -128,6 +137,7 @@ public class JanelaAtualizarProduto extends JFrame {
         add(botaoVoltar);
         add(botaoPesquisa);
         add(comboPesq);
+        add(logoAtualizarProduto);
 
         setVisible(false);
 

@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 
 public class JanelaListarProdutos extends JFrame {
@@ -25,6 +26,10 @@ public class JanelaListarProdutos extends JFrame {
 
         JScrollPane jScrollPane = new JScrollPane(listagemP);
         jScrollPane.setVisible(false);
+
+        ImageIcon iconeListagemP = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoListagemProduto.png")));
+        JLabel logoListagemProduto = new JLabel(iconeListagemP);
+        logoListagemProduto.setBounds(517, 0,563, 471);
 
 
 
@@ -181,6 +186,8 @@ public class JanelaListarProdutos extends JFrame {
         add(jScrollPane);
         add(btnVoltar);
         add(btnListar);
+        add(logoListagemProduto);
+
         setVisible(false);
 
     }

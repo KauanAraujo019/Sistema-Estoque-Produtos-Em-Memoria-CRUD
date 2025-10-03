@@ -53,7 +53,9 @@ public class JanelaAtualizarProduto extends JFrame {
         setBounds(0, 0, 1080, 720);
         setLayout(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         setLocationRelativeTo(null);
+
 
         revalidate();
         repaint();

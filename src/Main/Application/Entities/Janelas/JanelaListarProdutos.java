@@ -32,6 +32,7 @@ public class JanelaListarProdutos extends JFrame {
         setBounds(0, 0, 1080, 720);
         setLocationRelativeTo(null);
         setLayout(null);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 
@@ -152,7 +153,7 @@ public class JanelaListarProdutos extends JFrame {
                 }
 
                 listagemP.setPreferredSize(new Dimension(600, j+40));
-                listagemP.setBackground(Color.cyan);
+                listagemP.setBackground(Color.WHITE);
                 listagemP.setVisible(false);
 
                 if (janelaCadastroProdutos.getListaProdutos().isEmpty()){

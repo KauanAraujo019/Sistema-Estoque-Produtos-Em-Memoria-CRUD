@@ -34,6 +34,7 @@ public class JanelaCadastroProdutos extends JFrame {
         setBounds(0, 0, 1080, 720);
         setLayout(null);
         setLocationRelativeTo(null);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 
@@ -124,6 +125,14 @@ public class JanelaCadastroProdutos extends JFrame {
                         listaProdutos.add(produto);
 
                         JOptionPane.showMessageDialog(null, "Produto "+nomeProduto+" Cadastrado!");
+
+                        textProduto.setText("");
+                        textPreco.setText("");
+                        textQuant.setText("");
+
+                        comboBox.setSelectedItem(" UN");
+
+
 
                     }
 

@@ -24,6 +24,8 @@ public class JanelaRemoverProdutos extends JanelaAtualizarProduto {
         labelProduto.setBounds(20, 20, 300, 40);
         labelProduto.setFont(new Font("arial", Font.BOLD, 20));
 
+        setResizable(false);
+
 
         add(labelProduto);
 

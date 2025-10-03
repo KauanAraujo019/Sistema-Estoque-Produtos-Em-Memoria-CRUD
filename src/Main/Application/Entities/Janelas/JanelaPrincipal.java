@@ -25,13 +25,19 @@ public class JanelaPrincipal extends JFrame {
 
 
 
+        JLabel tituloCriadorSistema = new JLabel("DESENVOLVIDO POR:  KAUAN ARAÚJO                 EMAIL: kauanaquinogo@gmail.com");
+        tituloCriadorSistema.setBounds(0,660,720,18);
+        tituloCriadorSistema.setFont(new Font("arial", Font.PLAIN, 18));
+        tituloCriadorSistema.setBackground(Color.cyan);
 
         setTitle("SISTEMA CADASTRO DE PRODUTOS");
         setBounds(0,0 ,1080,720);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
+        setResizable(false);
         setVisible(false);
+
 
 
         JButton botaoCadastroProduto = new JButton("CADASTRAR PRODUTOS");
@@ -56,14 +62,15 @@ public class JanelaPrincipal extends JFrame {
         add(botaoListarProduto);
         add(botaoAtualizarProduto);
         add(botaoRemoverProduto);
+        add(tituloCriadorSistema);
 
 
 
         botaoCadastroProduto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
                 janelaCadastrarP.setVisible(true);
+                setVisible(false);
 
             }
         });
@@ -73,8 +80,8 @@ public class JanelaPrincipal extends JFrame {
         botaoListarProduto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
                 janelaListarP.setVisible(true);
+                setVisible(false);
 
             }
         });
@@ -84,9 +91,9 @@ public class JanelaPrincipal extends JFrame {
         botaoAtualizarProduto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
                 janelaAtualizarP.revalidate();
                 janelaAtualizarP.setVisible(true);
+                setVisible(false);
 
 
             }
@@ -97,8 +104,8 @@ public class JanelaPrincipal extends JFrame {
         botaoRemoverProduto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
                 janelaRemoverP.setVisible(true);
+                setVisible(false);
 
             }
         });

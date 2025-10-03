@@ -17,6 +17,19 @@ public class JanelaAtualizarProduto extends JFrame {
 
     protected JanelaAtualizarProduto jan = this;
 
+    protected JComboBox comboPesq;
+    protected JLabel labelProduto;
+
+    public JComboBox getjComboBox(){
+        return comboPesq;
+    }
+
+    public JLabel getJlabelProduto(){
+        return labelProduto;
+    }
+
+
+
 
 
 
@@ -36,7 +49,7 @@ public class JanelaAtualizarProduto extends JFrame {
         repaint();
 
 
-        JLabel labelProduto = new JLabel("PESQUISAR PRODUTO:");
+        labelProduto = new JLabel("PESQUISAR PRODUTO:");
         labelProduto.setBounds(20, 20, 250, 40);
         labelProduto.setFont(new Font("arial", Font.BOLD, 20));
 
@@ -66,7 +79,7 @@ public class JanelaAtualizarProduto extends JFrame {
         JButton botaoPesquisa = new JButton(icon);
         botaoPesquisa.setBounds(530, 20, 40,40);
 
-        JComboBox comboPesq = new JComboBox();
+        comboPesq = new JComboBox();
         comboPesq.setBounds(250, 20, 60, 40);
         comboPesq.addItem("nome");
         comboPesq.addItem("ID");

@@ -25,9 +25,16 @@ public class JanelaPrincipal extends JFrame {
         this.janelaAtualizarP = new JanelaAtualizarProduto(this, janelaCadastrarP);
         this.janelaRemoverP = new JanelaRemoverProdutos(this, janelaCadastrarP);
 
-        ImageIcon iconeSistema = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoSistema.jpg")));
-        JLabel logoSistema = new JLabel(iconeSistema);
-        logoSistema.setBounds(517, 0,563, 471);
+        ImageIcon iconeSistema01 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoPrincipal02.png")));
+        JLabel logoSistema01 = new JLabel(iconeSistema01);
+        logoSistema01.setBounds(100, 50,563, 471);
+
+        ImageIcon iconeSistema02 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoPrincipal01.png")));
+        JLabel logoSistema02 = new JLabel(iconeSistema02);
+        logoSistema02.setBounds(530, -20,550, 450);
+
+        JLabel nomeSistema = new JLabel("SUPERMARKET JAVA");
+        nomeSistema.setBounds(450, 480, 300, 40);
 
 
         JLabel tituloCriadorSistema = new JLabel("DESENVOLVIDO POR:  KAUAN ARAÚJO                 EMAIL: kauanaquinogo@gmail.com");
@@ -68,7 +75,9 @@ public class JanelaPrincipal extends JFrame {
         add(botaoAtualizarProduto);
         add(botaoRemoverProduto);
         add(tituloCriadorSistema);
-        add(logoSistema);
+        add(logoSistema01);
+        add(logoSistema02);
+        add(nomeSistema);
 
 
 

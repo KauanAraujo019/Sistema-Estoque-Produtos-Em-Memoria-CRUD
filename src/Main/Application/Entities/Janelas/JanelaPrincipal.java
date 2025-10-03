@@ -27,14 +27,16 @@ public class JanelaPrincipal extends JFrame {
 
         ImageIcon iconeSistema01 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoPrincipal02.png")));
         JLabel logoSistema01 = new JLabel(iconeSistema01);
-        logoSistema01.setBounds(100, 50,563, 471);
+        logoSistema01.setBounds(500, 0,563, 471);
 
         ImageIcon iconeSistema02 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Main/Application/Resources/Images/logoPrincipal01.png")));
         JLabel logoSistema02 = new JLabel(iconeSistema02);
-        logoSistema02.setBounds(530, -20,550, 450);
+        logoSistema02.setBounds(-100, 120,450, 450);
 
         JLabel nomeSistema = new JLabel("SUPERMARKET JAVA");
-        nomeSistema.setBounds(450, 480, 300, 40);
+        nomeSistema.setBounds(600, 500, 450, 48);
+        nomeSistema.setFont(new Font("Calibri", Font.BOLD, 48));
+
 
 
         JLabel tituloCriadorSistema = new JLabel("DESENVOLVIDO POR:  KAUAN ARAÚJO                 EMAIL: kauanaquinogo@gmail.com");

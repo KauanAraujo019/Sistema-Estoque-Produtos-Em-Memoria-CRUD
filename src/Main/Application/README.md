@@ -84,9 +84,9 @@ no exemplo abaixo usaremos o KG<br>
 <br>
 <br>
 
-- no caso da pesquisa por NOME, é um pouco diferente, mas nada de dificultoso.<br>
-- ao pesquisar pelo nome do produto, é como em qualquer pesquisa, o programa irá procurar produtos com base no seu dado digitado, se escrever o nome completo do produto, apenas ele será mostrado.<br>
-- na imagem abaixo, pode-se ver que, independente da maneira que digitamos o produto, ele será exibido para a escolha do usuario SE o dado digitado corresponder ao nome do produto (sendo a primeira inicial ou apenas algumas palavras).
+- no caso da pesquisa por NOME é um pouco diferente, mas nada de dificultoso.<br>
+- ao pesquisar pelo nome do produto é como em qualquer pesquisa, o programa irá procurar produtos com base no seu dado digitado, se escrever o nome completo do produto, apenas ele será mostrado.<br>
+- na imagem abaixo pode-se ver que, independente da maneira que digitamos o produto, ele será exibido para a escolha do usuario SE o dado digitado corresponder ao nome do produto (sendo a primeira inicial ou apenas algumas palavras).
   <br>
 <img width="609" height="182" alt="10" src="https://github.com/user-attachments/assets/d6dc0dab-de26-4a2c-a980-be38fa3bae32" />
 <img width="610" height="185" alt="11" src="https://github.com/user-attachments/assets/481e6efd-808f-4962-ae84-eca49d15545a" />

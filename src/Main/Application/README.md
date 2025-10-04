@@ -105,8 +105,23 @@ no exemplo abaixo usaremos o KG<br>
 <br>
 <br>
 
-- .....
+- produto editado, agora é só clicar no icone SALVAR e pronto! produto atualizado e salvo com sucesso!
+<br>
+<img width="554" height="324" alt="Captura de tela 2025-10-04 172451" src="https://github.com/user-attachments/assets/51bd0f6c-1c81-49b8-8d18-6712cd270d2d" />
+<img width="564" height="401" alt="Captura de tela 2025-10-04 172521" src="https://github.com/user-attachments/assets/0101cac6-3ed5-4f07-bdaa-db7bfefed391" />
+<img width="1061" height="717" alt="Captura de tela 2025-10-04 172530" src="https://github.com/user-attachments/assets/d820871c-002c-4869-a394-d3c59bbd30eb" />
+<br>
+<br>
+<br>
 
+- ao salvar a janela se auto ajusta para procurar o proximo produto:
+<br>
+<img width="1062" height="704" alt="Captura de tela 2025-10-04 172542" src="https://github.com/user-attachments/assets/97ca94c1-929c-421d-b68b-7af61c3ec504" />
+<br>
+<br>
+<br>
+
+- .....
 
 
   

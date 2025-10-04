@@ -1,4 +1,4 @@
-<img width="1067" height="704" alt="image" src="https://github.com/user-attachments/assets/c843c8f5-ce18-4e94-9b08-ba819c144cdd" /><img width="460" height="133" alt="image" src="https://github.com/user-attachments/assets/f1c9a443-f201-4f87-8eee-bd3f49b22ddb" /><img width="1064" height="707" alt="image" src="https://github.com/user-attachments/assets/dc44a3d2-27a2-4c19-9753-19bee62df576" />-----SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
+-----SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
 
 <br>
 <br>

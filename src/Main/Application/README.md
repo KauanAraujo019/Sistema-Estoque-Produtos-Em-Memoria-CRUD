@@ -1,6 +1,6 @@
-SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
-
-
+-----SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
+<br>
+<br>
 - Primeiramente, devemos executar o arquivo .JAR (já devidamente baixado o JRE do java para executa-lo):
   <br>
 <img width="623" height="126" alt="Captura de tela 2025-10-04 172013" src="https://github.com/user-attachments/assets/21060592-0abf-4e70-a1ab-db753014a9e7" />
@@ -14,7 +14,9 @@ SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
   <br>
    <br>
     <br>
-    
+    <br>
+--JANELA CADASTRO DE PRODUTOS--
+  <br>
 - Essa é a primeira janela, a parte de cadastro de produtos:
   <br>
 <img width="1066" height="713" alt="Captura de tela 2025-10-04 172101" src="https://github.com/user-attachments/assets/ab9621d7-98f5-47dd-a1ef-6f8dbd966cad" />
@@ -29,7 +31,6 @@ SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
   <br>
   <br>
 
-
 - Como podemos ver na imagem abaixo, possui um caixa de simbolos, que é o tipo de quantidade do produto<br>
 EXEMPLO:<br>
 UN: escova de dentes<br>
@@ -41,6 +42,16 @@ no exemplo abaixo usaremos o KG<br>
 <br>
 <br>
 
-- .....
+- Logo apos clicar em Cadastrar, será mostrado uma mensagem resultando em falha ou êxito, q no caso da imagem deu certo porque respeitamos o padrão aceitavél:
+  <br>
+  <img width="1059" height="700" alt="Captura de tela 2025-10-04 172259" src="https://github.com/user-attachments/assets/ae194e64-9d60-4700-96b7-67454e6729b6" />
+  <br>
+  <br>
+  <br>
+
+--JANELA LISTAR PRODUTOS--
+<br>
+- 
+
 
 

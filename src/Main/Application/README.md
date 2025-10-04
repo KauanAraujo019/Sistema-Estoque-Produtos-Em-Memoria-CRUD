@@ -1,14 +1,14 @@
 -----SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
 <br>
 <br>
-- Primeiramente, devemos executar o arquivo .JAR (já devidamente baixado o JRE do java para executa-lo):
+- primeiramente, devemos executar o arquivo .JAR (já devidamente baixado o JRE do java para executa-lo):
   <br>
 <img width="623" height="126" alt="Captura de tela 2025-10-04 172013" src="https://github.com/user-attachments/assets/21060592-0abf-4e70-a1ab-db753014a9e7" />
  <br>
   <br>
    <br>
 
-- Com o arquivo aberto, o programa já está em execução. interface principal do programa:
+- com o arquivo aberto, o programa já está em execução. interface principal do programa:
   <br>
 <img width="1919" height="1079" alt="Captura de tela 2025-10-04 172043" src="https://github.com/user-attachments/assets/a3dd9c02-39b6-42fe-beeb-415cc17d383e" />
   <br>
@@ -18,14 +18,14 @@
     
 --JANELA CADASTRO DE PRODUTOS--
   <br>
-- Essa é a primeira janela, a parte de cadastro de produtos:
+- essa é a primeira janela, a parte de cadastro de produtos:
   <br>
 <img width="1066" height="713" alt="Captura de tela 2025-10-04 172101" src="https://github.com/user-attachments/assets/ab9621d7-98f5-47dd-a1ef-6f8dbd966cad" />
   <br>
   <br>
   <br>
 
-- Em preço digitamos COM o ponto (virgula não aceitavel):
+- em preço digitamos COM o ponto (virgula não aceitavel):
   <br>
 <img width="1064" height="706" alt="Captura de tela 2025-10-04 172212" src="https://github.com/user-attachments/assets/4cd42265-a33d-410b-b5b0-25485744f749" />
   <br>
@@ -43,7 +43,7 @@ no exemplo abaixo usaremos o KG<br>
 <br>
 <br>
 
- - Logo apos clicar em Cadastrar, será mostrado uma mensagem resultando em falha ou êxito, q no caso da imagem deu certo porque respeitamos o padrão aceitavél:
+ - logo apos clicar em Cadastrar, será mostrado uma mensagem resultando em falha ou êxito, q no caso da imagem deu certo porque respeitamos o padrão aceitavél:
   <br>
 <img width="1059" height="700" alt="Captura de tela 2025-10-04 172259" src="https://github.com/user-attachments/assets/ae194e64-9d60-4700-96b7-67454e6729b6" />
   <br>
@@ -80,9 +80,18 @@ no exemplo abaixo usaremos o KG<br>
 <br>
 <img width="602" height="159" alt="Captura de tela 2025-10-04 190441" src="https://github.com/user-attachments/assets/08d868b6-3577-46b1-b95e-74f09405c1eb" />
 <img width="578" height="310" alt="Captura de tela 2025-10-04 190449" src="https://github.com/user-attachments/assets/d162acf2-028b-46e3-b823-47241e8d89eb" />
+<br>
+<br>
+<br>
 
-
-
+- no caso da pesquisa por NOME, é um pouco diferente, mas nada de dificultoso.<br>
+- ao pesquisar pelo nome do produto, é como em qualquer pesquisa, o programa irá procurar produtos com base no seu dado digitado, se escrever o nome completo do produto, apenas ele será mostrado.<br>
+- na imagem abaixo, pode-se ver que, independente da maneira que digitamos o produto, ele será exibido para a escolha do usuario SE o dado digitado corresponder ao nome do produto (sendo a primeira inicial ou apenas algumas palavras).
+  <br>
+<img width="609" height="182" alt="10" src="https://github.com/user-attachments/assets/d6dc0dab-de26-4a2c-a980-be38fa3bae32" />
+<img width="610" height="185" alt="11" src="https://github.com/user-attachments/assets/481e6efd-808f-4962-ae84-eca49d15545a" />
+<img width="610" height="192" alt="12" src="https://github.com/user-attachments/assets/150a74f9-50b6-4865-906d-21bf3d6d7c69" />
+<img width="625" height="169" alt="13" src="https://github.com/user-attachments/assets/ec785f52-ee0e-451c-b375-9faa68d03cf6" />
 
 
   

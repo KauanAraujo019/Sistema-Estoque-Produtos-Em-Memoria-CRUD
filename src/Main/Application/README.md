@@ -1,4 +1,5 @@
-<img width="1057" height="700" alt="image" src="https://github.com/user-attachments/assets/26500de8-cac3-489d-97a3-fb52dfd2f2d4" /><img width="609" height="182" alt="image" src="https://github.com/user-attachments/assets/b457b1dd-edac-4638-8279-49446cc047c5" />+-----SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
+-----SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
+
 <br>
 <br>
 - primeiramente, devemos executar o arquivo .JAR (já devidamente baixado o JRE do java para executa-lo):
@@ -96,7 +97,7 @@ no exemplo abaixo usaremos o KG<br>
 <br>
 <br>
 
--com o produto encontrado, ao clicar no icone LÁPIS ao lado do nome do produto você poderá atualizar o produto da forma que desejar e precisar:
+- com o produto encontrado, ao clicar no icone LÁPIS ao lado do nome do produto você poderá atualizar o produto da forma que desejar e precisar:
 <br>
 <img width="1057" height="700" alt="Captura de tela 2025-10-04 172427" src="https://github.com/user-attachments/assets/6df0b00f-b53d-40bc-a483-85f22cd72a5a" />
 <img width="554" height="324" alt="Captura de tela 2025-10-04 172451" src="https://github.com/user-attachments/assets/b181fd16-5bd9-4404-be0a-b452acf4847a" />

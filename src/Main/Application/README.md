@@ -59,7 +59,15 @@ no exemplo abaixo usaremos o KG<br>
   <br>
   <br>
 
-  - .....
+  - ao clicar em "Listar Produtos" será gerado uma tabela simples de visualização de cada produto e seus respectivos dados:
+    <br>
+    <img width="1057" height="703" alt="08" src="https://github.com/user-attachments/assets/3df4b6f1-664c-4832-b5db-7da1c35d98ea" />
+    <br>
+    <br>
+    <br>
+
+    - 
+
 
   
 

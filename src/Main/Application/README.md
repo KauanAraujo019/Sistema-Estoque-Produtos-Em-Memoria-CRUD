@@ -68,9 +68,19 @@ no exemplo abaixo usaremos o KG<br>
 
 --JANELA ATUALIZAR PRODUTOS--
 <br>
-- .....
+- essa é a janela atualizar produtos:
 <br>
 <img width="1060" height="707" alt="09" src="https://github.com/user-attachments/assets/824d3700-784d-4424-906f-4c8dd485d0c5" />
+<br>
+<br>
+<br>
+
+ - nessa janela, podemos buscar cada produto de 2 formas: por NOME ou ID (o ID é gerado automaticamente em ordem crescente) já o q nosso produto acabou de ser cadastrado, ele foi atribuido com o ID numero 1 (caso estiver em dúvida em relação ao ID, procure-o no LISTAR PRODUTOS)<br>
+ SE caso o id for escolhido, o programa puxa o produto e seus dados automaticamente como mostra as imagens abaixo:
+<br>
+<img width="578" height="310" alt="Captura de tela 2025-10-04 190449" src="https://github.com/user-attachments/assets/d162acf2-028b-46e3-b823-47241e8d89eb" />
+<img width="602" height="159" alt="Captura de tela 2025-10-04 190441" src="https://github.com/user-attachments/assets/08d868b6-3577-46b1-b95e-74f09405c1eb" />
+
 
 
 

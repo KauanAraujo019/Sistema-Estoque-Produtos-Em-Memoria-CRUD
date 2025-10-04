@@ -1,4 +1,4 @@
-<img width="1066" height="713" alt="image" src="https://github.com/user-attachments/assets/15c8754e-d371-4bad-b4b6-ef566cf1165a" />SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
+SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
 
 
 - Primeiramente, devemos executar o arquivo .JAR (já devidamente baixado o JRE do java para executa-lo):

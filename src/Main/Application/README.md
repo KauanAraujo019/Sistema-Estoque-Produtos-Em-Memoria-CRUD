@@ -7,4 +7,13 @@ SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
 
 
 
- - 
+
+ - Com o arquivo aberto, o programa já está em execução:
+   interface principal do programa:
+
+<img width="1919" height="1079" alt="Captura de tela 2025-10-04 172043" src="https://github.com/user-attachments/assets/a3dd9c02-39b6-42fe-beeb-415cc17d383e" />
+
+
+
+
+ - .......

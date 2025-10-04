@@ -1,4 +1,4 @@
------SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
+<img width="1067" height="704" alt="image" src="https://github.com/user-attachments/assets/c843c8f5-ce18-4e94-9b08-ba819c144cdd" /><img width="460" height="133" alt="image" src="https://github.com/user-attachments/assets/f1c9a443-f201-4f87-8eee-bd3f49b22ddb" /><img width="1064" height="707" alt="image" src="https://github.com/user-attachments/assets/dc44a3d2-27a2-4c19-9753-19bee62df576" />-----SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
 
 <br>
 <br>
@@ -114,17 +114,56 @@ no exemplo abaixo usaremos o KG<br>
 <br>
 <br>
 
-- ao salvar a janela se auto ajusta para procurar o proximo produto:
+- ao salvar, a janela se auto ajusta para procurar o proximo produto:
 <br>
 <img width="1062" height="704" alt="Captura de tela 2025-10-04 172542" src="https://github.com/user-attachments/assets/97ca94c1-929c-421d-b68b-7af61c3ec504" />
 <br>
 <br>
 <br>
 
-- .....
+--JANELA REMOVER PRODUTO--
+<br>
+- janela remover produtos:
+<br>
+<img width="1064" height="707" alt="Captura de tela 2025-10-04 172552" src="https://github.com/user-attachments/assets/4258225e-b5bc-47fc-9cc3-88f6f6b415fc" />
+<br>
+<br>
+<br>
 
+- no caso da janela remover produtos você só poderá remover um produto APENAS com o ID. Então como dito anteriormente, caso estiver em duvida em relação ao produto, confirme em "LISTAR PRODUTOS".
+<br>
+<img width="460" height="133" alt="Captura de tela 2025-10-04 195409" src="https://github.com/user-attachments/assets/c1d7a8d5-763b-4437-93dc-049ffd8360fa" />
+<br>
+<br>
+<br>
 
-  
+- ao procurar pelo ID do produto, o programa mostra a descrição do produto e o disponibiliza para excluí-lo:
+<br>
+<img width="1062" height="703" alt="Captura de tela 2025-10-04 172606" src="https://github.com/user-attachments/assets/4cbdf7a6-3726-443f-906b-496f24cc8a96" />
+<br>
+<br>
+<br>
+
+- ao clicar no icone da lixeira o produto será exluído permanentemente do programa.
+<br>
+<img width="1067" height="704" alt="Captura de tela 2025-10-04 172613" src="https://github.com/user-attachments/assets/fb22b256-edeb-4ebb-948a-2a1183919183" />
+<br>
+<br>
+<br>
+
+- janela atualiza por padrão:
+<br>
+<img width="1059" height="691" alt="Captura de tela 2025-10-04 172620" src="https://github.com/user-attachments/assets/ebb73c8b-bd5d-4c7d-a597-3a7cac66053f" />
+<br>
+<br>
+<br>
+
+- ao listar ou procurar o produto não será encontrado (excluido permanentemente).
+<br>
+<img width="1057" height="704" alt="Captura de tela 2025-10-04 172631" src="https://github.com/user-attachments/assets/420108a3-9df8-4bd4-adc1-31f825b8fed0" />
+<img width="1050" height="690" alt="Captura de tela 2025-10-04 200146" src="https://github.com/user-attachments/assets/f79bca92-1751-4d62-addf-7d33e42e352b" />
+<img width="946" height="632" alt="Captura de tela 2025-10-04 200154" src="https://github.com/user-attachments/assets/d53414f9-4af4-46f7-9d05-e0a54e00e631" />
+
 
 
 

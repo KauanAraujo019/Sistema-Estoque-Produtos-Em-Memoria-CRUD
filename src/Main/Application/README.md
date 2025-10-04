@@ -43,7 +43,7 @@ no exemplo abaixo usaremos o KG<br>
 <br>
 <br>
 
-- Logo apos clicar em Cadastrar, será mostrado uma mensagem resultando em falha ou êxito, q no caso da imagem deu certo porque respeitamos o padrão aceitavél:
+ - Logo apos clicar em Cadastrar, será mostrado uma mensagem resultando em falha ou êxito, q no caso da imagem deu certo porque respeitamos o padrão aceitavél:
   <br>
   <img width="1059" height="700" alt="Captura de tela 2025-10-04 172259" src="https://github.com/user-attachments/assets/ae194e64-9d60-4700-96b7-67454e6729b6" />
   <br>
@@ -52,21 +52,26 @@ no exemplo abaixo usaremos o KG<br>
 
 --JANELA LISTAR PRODUTOS--
 <br>
-- aqui está a janela para listar produtos cadastrados:
+ - aqui está a janela para listar produtos cadastrados:
   <br>
   <img width="1058" height="710" alt="07" src="https://github.com/user-attachments/assets/4347e1f5-dc10-459c-b59c-39a37d495471" />
   <br>
   <br>
   <br>
 
-  - ao clicar em "Listar Produtos" será gerado uma tabela simples de visualização de cada produto e seus respectivos dados:
+ - ao clicar em "Listar Produtos" será gerado uma tabela simples de visualização de cada produto e seus respectivos dados:
     <br>
     <img width="1057" height="703" alt="08" src="https://github.com/user-attachments/assets/3df4b6f1-664c-4832-b5db-7da1c35d98ea" />
     <br>
     <br>
     <br>
 
-    - 
+--JANELA ATUALIZAR PRODUTOS--
+<br>
+- .....
+<br>
+<img width="1060" height="707" alt="09" src="https://github.com/user-attachments/assets/824d3700-784d-4424-906f-4c8dd485d0c5" />
+
 
 
   

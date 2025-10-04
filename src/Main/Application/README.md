@@ -52,7 +52,16 @@ no exemplo abaixo usaremos o KG<br>
 
 --JANELA LISTAR PRODUTOS--
 <br>
-- 
+- aqui está a janela para listar produtos cadastrados:
+  <br>
+  <img width="1058" height="710" alt="07" src="https://github.com/user-attachments/assets/4347e1f5-dc10-459c-b59c-39a37d495471" />
+  <br>
+  <br>
+  <br>
+
+  - .....
+
+  
 
 
 

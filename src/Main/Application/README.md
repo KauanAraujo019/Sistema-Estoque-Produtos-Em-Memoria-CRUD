@@ -29,5 +29,18 @@ SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
   <br>
   <br>
 
-- ........
+
+- Como podemos ver na imagem abaixo, possui um caixa de simbolos, que é o tipo de quantidade do produto<br>
+EXEMPLO:<br>
+UN: escova de dentes<br>
+CX: leite integral 6 unidades<br>
+e etc...<br>
+no exemplo abaixo usaremos o KG<br>
+<img width="427" height="353" alt="05" src="https://github.com/user-attachments/assets/0cf1f773-c31d-42bf-bb8a-a456e0d9c506" />
+<br>
+<br>
+<br>
+
+- .....
+
 

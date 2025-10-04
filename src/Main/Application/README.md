@@ -1,4 +1,4 @@
------SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
++-----SISTEMA ESTOQUE DE PRODUTOS EM EXECUÇÃO:
 <br>
 <br>
 - primeiramente, devemos executar o arquivo .JAR (já devidamente baixado o JRE do java para executa-lo):

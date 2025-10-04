@@ -1,4 +1,4 @@
-Neste projeto, O objetivo é fixar e colocar os aprendizados sobre java em pratica.
+Neste projeto, o objetivo é fixar e colocar os aprendizados sobre java em pratica.
 
 Um simples sistema, mas funcional.<br>
 

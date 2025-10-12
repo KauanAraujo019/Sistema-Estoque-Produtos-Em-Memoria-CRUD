@@ -5,7 +5,6 @@ import Main.Application.Entities.Janelas.JanelaCadastroProdutos;
 import Main.Application.Entities.Produto;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicComboBoxUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

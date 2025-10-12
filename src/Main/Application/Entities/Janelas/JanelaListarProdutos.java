@@ -155,7 +155,6 @@ public class JanelaListarProdutos extends JFrame {
                     listagemP.add(quantLabelP);
 
                     j = j + 40;
-                    System.out.println(produto.getNameProduct());
 
                 }
 

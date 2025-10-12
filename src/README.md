@@ -33,7 +33,7 @@
   <br>
   <br>
 
-- Como podemos ver na imagem abaixo, possui um caixa de simbolos, que é o tipo de quantidade do produto<br>
+- Como podemos ver na imagem abaixo, possui um caixa de simbolos que é o tipo de quantidade do produto<br>
 EXEMPLO:<br>
 UN: escova de dentes<br>
 CX: leite integral 6 unidades<br>
